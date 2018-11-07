@@ -10,9 +10,63 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+
         <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
+
+    <div class="navbar-wagon">
+  <!-- Logo -->
+  <a href="/" class="navbar-wagon-brand">
+    <img src="http://image.noelshack.com/fichiers/2018/45/3/1541578930-capture-d-ecran-2018-11-07-a-16-21-57.png" alt="logo">
+  </a>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Become a host</a>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Sign up</a>
+
+    <!-- Profile picture with dropdown list -->
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Log Out</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dropdown appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><a href="#">Become a host</a></li>
+        <li><a href="#">Sign up</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
     <%= yield %>
+
+    <div class="footer">
+      <div class="footer-copyright">
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Pricing</a>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Our Story</a>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Contact us</a>
+  </div>
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+
+</div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
