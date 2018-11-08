@@ -1,17 +1,17 @@
 class CoworkingSpacesController < ApplicationController
   def new
-    @coworking = Coworking.new
+    @coworking_space = CoworkingSpace.new
   end
 
   def create
-    @coworking = Coworking.new(params_coworkings)
-    @coworking.save
-    redirect_to coworkings_path
+    @coworking_space = CoworkingSpace.new(params_coworkings)
+    @coworking_space.save
+    redirect_to coworking_spaces_path
   end
 
   private
 
   def params_coworkings
-    params.require(:coworking).permit(:location, :capacity, :services, :price, :name)
+    params.require(:coworking_space).permit(:location, :capacity, :services, :price, :name)
   end
 end
