@@ -17,19 +17,13 @@ class BookingsController < ApplicationController
     end   # saving the object
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
   private
 
   def booking_params
     params.require(:booking).permit(:start_datetime, :end_datetime)
   end
 end
-
-
-
-# coworking_bookings POST   /coworkings/:coworking_id/bookings(.:format)                                             bookings#create
-#     new_coworking_booking GET    /coworkings/:coworking_id/bookings/new(.:format)                                         bookings#new
-#    edit_coworking_booking GET    /coworkings/:coworking_id/bookings/:id/edit(.:format)                                    bookings#edit
-#         coworking_booking GET    /coworkings/:coworking_id/bookings/:id(.:format)                                         bookings#show
-#                           PATCH  /coworkings/:coworking_id/bookings/:id(.:format)                                         bookings#update
-#                           PUT    /coworkings/:coworking_id/bookings/:id(.:format)                                         bookings#update
-#                           DELETE /coworkings/:coworking_id/bookings/:id(.:format)                                         bookings#destroy
