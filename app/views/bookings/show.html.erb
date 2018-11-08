@@ -1,25 +1,52 @@
+<h2>Bookings:</h2>
+Thank you for your reservation, happy coworking:
 <div class="container">
-<h1>DashBoard</h1>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="card-booking">
+        <div class="card-title">
+         <a href="https://www.outpost-asia.com/" class="btn-treehouse"> <%= @booking.coworking_space.name %> </a>
+       </div>
+       <div class="card-content">
+        <div class="card-image">
+          <%= image_tag "https://picsum.photos/150/150" %>
+        </div>
 
-<h3>Bookings</h3>
+        <div class="card-text">
 
-<div class="message">
-  <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-  <div class="message-name">
-    <h3>Gab Dehan</h3>
-    <p>10/07/17</p>
+          <div class="card-date">
+            <p>
+              Dates reserved -->
+              From: < <%= @booking.start_datetime %> <  To: < <%= @booking.end_datetime %> >
+            </p>
+          </div>
+          <p>
+            Price:
+            <%= @booking.coworking_space.price %> --> price for one day
+          </p>
+          <p>
+            Total Price:
+            <%= @booking.calc_total_price %>
+          </p>
+          <p>
+            Services available:
+            <%= @booking.coworking_space.services %>
+          </p>
+          <p>
+            Total Days Booked:
+            <%= @booking.calc_total_days_booked %>
+          </p>
+          <p>
+            Location::
+            <%= @booking.coworking_space.location %>
+          </p>
+          <p>
+            Capacity:
+            <%= @booking.coworking_space.capacity %>
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="message-body">
-    <p><strong>I am not sure yet!</strong></p>
-    <p>
-      I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
-    </p>
-  </div>
-  <div class="message-status">
-    <p class="status pending">Pending</p>
-    <p class="price">€345</p>
-  </div>
-</div>
-
 </div>
 
