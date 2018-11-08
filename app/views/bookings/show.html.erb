@@ -4,4 +4,25 @@
   <%= @booking.coworking_space.name %> from
   <%= @booking.start_datetime %> to <%= @booking.end_datetime %>
 </p>
+<p>
+  This is going to be your price:
+  <%= @booking.coworking_space.price %> -- for one day
+</p>
+<p>
+   <%= @booking.start_datetime %> - <%= @booking.end_datetime %> * <%= @booking.coworking_space.price %> --- duration of your stay
+</p>
+<p>
+  Services available:
+  <%= @booking.coworking_space.services %>
+<p>
+</p>
+  It is located in:
+  <%= @booking.coworking_space.location %>
+</p>
+</p>
+  Capacity:
+  <%= @booking.coworking_space.capacity %>
+</p>
+
+
 
