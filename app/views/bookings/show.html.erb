@@ -1,42 +1,47 @@
 <h2>Bookings:</h2>
-  Thank you for your reservation, we look forward to seein you soon :
+Thank you for your reservation, happy coworking:
 
 <div class="card-booking">
 
   <div class="card-text">
-<p>
-  <%= @booking.coworking_space.name %> from
-  <%= @booking.start_datetime %> to <%= @booking.end_datetime %>
-</p>
-<p>
-  This is going to be your price:
-  <%= @booking.coworking_space.price %> --> price for one day
-</p>
-<p>
-  This is your total price ( price per day * days booked) -->
-  <%= @booking.calc_total_price %>
-</p>
-<p>
-  Services available:
-  <%= @booking.coworking_space.services %>
-</p>
-<p>
-  Total Days Booked:
-  <%= @booking.calc_total_days_booked %>
-</p>
-<p>
-  It is located in:
-  <%= @booking.coworking_space.location %>
-</p>
-<p>
-  Capacity:
-  <%= @booking.coworking_space.capacity %>
-</p>
-</div>
+    <p>
+      <div class="card-title">
+       <a href="https://www.outpost-asia.com/" class="btn-treehouse"> <%= @booking.coworking_space.name %> </a>
+      </div>
+      <div class="card-date">
+        Dates reserved -->
+       From: < <%= @booking.start_datetime %> <  To: < <%= @booking.end_datetime %> >
+      </div>
+    </p>
+    <p>
+      This is going to be your price:
+      <%= @booking.coworking_space.price %> --> price for one day
+    </p>
+    <p>
+      This is your total price ( price per day * days booked) -->
+      <%= @booking.calc_total_price %>
+    </p>
+    <p>
+      Services available:
+      <%= @booking.coworking_space.services %>
+    </p>
+    <p>
+      Total Days Booked:
+      <%= @booking.calc_total_days_booked %>
+    </p>
+    <p>
+      It is located in:
+      <%= @booking.coworking_space.location %>
+    </p>
+    <p>
+      Capacity:
+      <%= @booking.coworking_space.capacity %>
+    </p>
+  </div>
 
-<div class="card-image">
-<%= image_tag "https://picsum.photos/150/150" %>
-</div>
+  <div class="card-image">
+    <%= image_tag "https://picsum.photos/150/150" %>
+  </div>
 
 </div>
 
