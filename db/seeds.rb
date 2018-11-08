@@ -5,12 +5,28 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.create!({
+  email: "a@a.a",
+  password: "helloworld"
+})
+User.create!({
+  email: "b@b.b",
+  password: "helloworld"
+})
+User.create!({
+  email: "c@c.c",
+  password: "helloworld"
+})
+
+
 CoworkingSpace.create!({
   name: "Dojo",
   location: "Canggu",
   capacity: "50",
   price: 30,
-  services: "Washroom"
+  services: "Washroom",
+  user_id: 3
   })
 
 CoworkingSpace.create!({
@@ -18,7 +34,8 @@ CoworkingSpace.create!({
   location: "Ubud",
   capacity: "80",
   price: 25,
-  services: "Internet"
+  services: "Internet",
+  user_id: 2
   })
 
 CoworkingSpace.create!({
@@ -26,7 +43,8 @@ CoworkingSpace.create!({
   location: "Berawa",
   capacity: "30",
   price: 10,
-  services: "Pool"
+  services: "Pool",
+  user_id: 1
   })
 
 CoworkingSpace.create!({
@@ -34,5 +52,6 @@ CoworkingSpace.create!({
   location: "Berawa",
   capacity: "40",
   price: 40,
-  services: "Rice fields, Cafe"
+  services: "Rice fields, Cafe",
+  user_id: 1
   })
