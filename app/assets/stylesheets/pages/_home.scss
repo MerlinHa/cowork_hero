@@ -1,10 +1,12 @@
 // Specific CSS for your home-page
 .semi_banner {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=749f8fec9b7cf4a040ae12df54cc7443&auto=format&fit=crop&w=2250&q=80');
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/random/900x200');
+  background-position: cover;
   height: 275px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   color: white;
   border-radius: 10px;
   margin-top: 50px;
@@ -25,6 +27,6 @@
 }
 
 p {
-  font-weight: bold;
+  font-weight: regular;
   font-size: 16px;
 }
