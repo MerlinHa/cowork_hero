@@ -1,5 +1,9 @@
 class BookingsController < ApplicationController
 
+  def index
+    @booking = Booking.all
+  end
+
   def new
     @booking = Booking.new
     @coworking_space = CoworkingSpace.find(params[:coworking_space_id])
