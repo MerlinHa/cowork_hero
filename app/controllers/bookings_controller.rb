@@ -6,11 +6,15 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @coworking_booking = Coworking_booking.new(coworking_booking_params) # creating the object with the filteredform data
+    @coworkingbooking = Coworking_booking.new(coworking_booking_params) # creating the object with the filteredform data
     @coworking_space = Coworking_space.find(params[:coworking_space_id]) # grabbing the coworking_space by the id in params
     @coworking_booking.user = @coworking_space # setting the army on the army soldier (saving the relationship)
     @coworking_booking.save  # saving the object
     redirect_to army_path(@army) # redirecting back to the army show path
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
   end
 
   private
