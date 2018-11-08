@@ -1,1 +1,32 @@
 // Specific CSS for your home-page
+.semi_banner {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/random/900x200');
+  background-position: cover;
+  height: 275px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+
+.center {
+  font-weight: 300;
+  font-size: 20px;
+  color: #464646;
+  line-height: 1.6em;
+  padding: 0;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.container {
+  width: 900px;
+}
+
+p {
+  font-weight: regular;
+  font-size: 16px;
+}
