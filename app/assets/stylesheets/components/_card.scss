@@ -48,21 +48,35 @@
   opacity: 0.1;
 }
 
-
 .card-booking {
+  margin: 10px;
+  box-shadow: 1px 1px 1px rgba(150,150,150,0.9);
+  border-radius: 5px;
+}
+
+.card-content {
   width: 100%;
-  display:flex;
-  margin-top: 25px;
-  border: 3px solid black;
-  justify-content: space-between;
+  border-radius: 4px;
+  text-align: center;
+  background-color: rgb(240,240,240);
 
 }
 
 .card-title {
   font-weight: bold;
   font-size: 15px;
-  font-style: $headers-font
-
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  margin-bottom: 5px;
+  font-style: $headers-font;
+  padding: 30px 0px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: rgb(40,40,40);
+  color: white;
+  a {
+    color: white;
+  }
 }
 
 .card-date {
@@ -72,32 +86,19 @@
 }
 
 .card-text {
-  flex: 1 0 65%;
+  // flex: 1 0 65%;
+  text-align: left;
   font-family: $body-font;
   font-size: 5px;
 }
 
 .card-image {
- flex: 0 1 20%;
- padding-top: 50px;
- padding-bottom: 50px;
- padding-left: 25px;
- padding-right: 25px;
+ // flex: 0 1 20%;
+ // padding-top: 50px;
+ // padding-bottom: 50px;
+ // padding-left: 25px;
+ // padding-right: 25px;
 }
 
-.btn-treehouse {
-  color: white;
-  padding-bottom: 10px;
-  padding: 10px 15px;
-  border-radius: 4px;
-  font-weight: bold;
-  background: #6AD58B;
-  transition: background 0.3s ease;
-}
-.btn-treehouse:hover {
-  opacity: 1;
-  background: #3ac162;
-  text-decoration: none;
-  color: white;
-}
+
 
