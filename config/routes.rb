@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :coworking_spaces do
     resources :bookings, except: [:index]
   end
-  resources :bookings, only: [] do
+  resources :bookings, only: [:index] do
     resources :reviews, only: [:new, :create]
   end
 end
