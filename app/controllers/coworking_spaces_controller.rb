@@ -9,6 +9,11 @@ class CoworkingSpacesController < ApplicationController
     redirect_to coworking_spaces_path
   end
 
+  def show
+    @coworking_space = CoworkingSpace.find(params_coworkings)
+  end
+
+
   private
 
   def params_coworkings
