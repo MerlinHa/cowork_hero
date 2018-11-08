@@ -1,4 +1,28 @@
-<% @coworking_spaces.each do |space| %>
-<%= space.name %>
-<% end %>
-<h2>Hello</h2>
+
+
+<div class="myflexbox">
+  <div class="cards-container">
+<!--     <div class="container">
+ -->      <div class="row">
+        <% @coworking_spaces.each do |space| %>
+        <div class="col-xs-12">
+          <div class="card card-index" style="background-color: #F4F4F4">
+            <div class="card-category card-category-index">Popular</div>
+            <div class="card-description card-description-index">
+              <h2><%= space.name %>, <%= space.location %></h2>
+              <p>Djungle Coworking Space</p>
+            </div>
+            <div class="card-price"><%= space.price %></div>
+            <img class="card-picture" src="http://blog.copass.org/wp-content/uploads/2015/01/finalBLOG-770x402.jpg">
+            <a class="card-link" href="#" ></a>
+          </div>
+        </div>
+        <% end %>
+      </div>
+<!--     </div>
+ -->  </div>
+  <div id="mymap">
+    <img class="maps-index" src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/w_1164,c_limit/GoogleMapTA.jpg">
+  </div>
+
+</div>

@@ -1,2 +1,19 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.myflexbox {
+display: flex;
+// align-items: center;
+// justify-content: space-between;
+}
+
+#mymap {
+  top: 0 !important;
+  height: 100vh;
+  flex: 0 0 450px;
+  position: sticky !important;
+}
+
+.cards-container {
+  flex: 1 0 70%;
+}

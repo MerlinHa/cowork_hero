@@ -47,3 +47,45 @@
 .card-link:hover {
   opacity: 0.1;
 }
+
+.card-picture {
+  position: absolute;
+  right: 0px;
+  height: 100%;
+  width: 300px;
+  border-radius: 0 10px 10px 0;
+}
+
+.container-index {
+  margin: 0;
+  width: 100%;
+}
+
+.card-index {
+  border-width: 0.5px;
+  border-color: lightgrey;
+  border-style: solid;
+  margin: 10px;
+}
+.card-category-index {
+  color: #FE5D5D
+}
+
+.card-description-index h2 {
+  color: #FE5D5D;
+}
+
+.card-description-index p {
+  color: black;
+}
+
+.card-price {
+  position: absolute;
+  right: 340px;
+  bottom: 20px;
+  color: #FE5D5D;
+  font-size: 24px;
+}
+
+
+
