@@ -1,0 +1,11 @@
+<div class="container">
+  <h3>Tell us more about your coworking-space</h3>
+<%= simple_form_for [@coworking_space] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :location %>
+  <%= f.input :capacity %>
+  <%= f.input :services %>
+  <%= f.input :price %>
+  <%= f.submit "add a coworking_space", class: "btn btn-primary" %>
+<% end %>
+</div>
