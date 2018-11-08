@@ -1,0 +1,6 @@
+<%= simple_form_for([@coworking_space, @booking]) do |f| %>
+  <%= f.input :start_datetime %>
+  <%= f.input :end_datetime %>
+  <%= f.association :coworking_space %>
+  <%= f.submit %>
+<% end %>

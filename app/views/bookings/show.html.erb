@@ -1,0 +1,36 @@
+
+<h2>Bookings:</h2>
+<p>
+  Thank you for your reservation, we look forward to seein you soon @
+  <%= @booking.coworking_space.name %> from
+  <%= @booking.start_datetime %> to <%= @booking.end_datetime %>
+</p>
+<p>
+  This is going to be your price:
+  <%= @booking.coworking_space.price %> --> price for one day
+</p>
+<p>
+  This is your total price ( price per day * days booked) -->
+  <%= @booking.calc_total_price %>
+</p>
+<p>
+  Services available:
+  <%= @booking.coworking_space.services %>
+<p>
+
+<p>
+  Total Days Booked:
+    <%= @booking.calc_total_days_booked %>
+</p>
+
+</p>
+  It is located in:
+  <%= @booking.coworking_space.location %>
+</p>
+</p>
+  Capacity:
+  <%= @booking.coworking_space.capacity %>
+</p>
+
+
+
