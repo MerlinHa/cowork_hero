@@ -14,11 +14,11 @@ Thank you for your reservation, happy coworking:
       </div>
     </p>
     <p>
-      This is going to be your price:
+      Price:
       <%= @booking.coworking_space.price %> --> price for one day
     </p>
     <p>
-      This is your total price ( price per day * days booked) -->
+      Total Price:
       <%= @booking.calc_total_price %>
     </p>
     <p>
@@ -30,7 +30,7 @@ Thank you for your reservation, happy coworking:
       <%= @booking.calc_total_days_booked %>
     </p>
     <p>
-      It is located in:
+      Location::
       <%= @booking.coworking_space.location %>
     </p>
     <p>

@@ -59,14 +59,16 @@
 }
 
 .card-title {
+  font-weight: bold;
   font-size: 15px;
   font-style: $headers-font
+
 }
 
 .card-date {
-  padding-top: 7px;
-  padding-bottom: 7px;
-  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 15px;
 }
 
 .card-text {
@@ -83,9 +85,19 @@
  padding-right: 25px;
 }
 
+.btn-treehouse {
+  color: white;
+  padding-bottom: 10px;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #6AD58B;
+  transition: background 0.3s ease;
+}
 .btn-treehouse:hover {
   opacity: 1;
   background: #3ac162;
   text-decoration: none;
   color: white;
 }
+
