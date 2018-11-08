@@ -1,7 +1,10 @@
-
 <h2>Bookings:</h2>
+  Thank you for your reservation, we look forward to seein you soon :
+
+<div class="card-booking">
+
+  <div class="card-text">
 <p>
-  Thank you for your reservation, we look forward to seein you soon @
   <%= @booking.coworking_space.name %> from
   <%= @booking.start_datetime %> to <%= @booking.end_datetime %>
 </p>
@@ -16,21 +19,24 @@
 <p>
   Services available:
   <%= @booking.coworking_space.services %>
-<p>
-
+</p>
 <p>
   Total Days Booked:
-    <%= @booking.calc_total_days_booked %>
+  <%= @booking.calc_total_days_booked %>
 </p>
-
-</p>
+<p>
   It is located in:
   <%= @booking.coworking_space.location %>
 </p>
-</p>
+<p>
   Capacity:
   <%= @booking.coworking_space.capacity %>
 </p>
+</div>
 
+<div class="card-image">
+<%= image_tag "https://picsum.photos/150/150" %>
+</div>
 
+</div>
 
