@@ -1,2 +1,56 @@
-<h1>Dashboards#mydashboard</h1>
-<p>Find me in app/views/dashboards/mydashboard.html.erb</p>
+<div class="container">
+  <div class="row text-center">
+    <div class="col-md-8 col-sm-offset-2">
+      <h3>My bookings</h3>
+      <% @mybookings.each do |booking| %>
+      <div class="message">
+        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+        <div class="message-name">
+          <h3><%= booking.user.name %></h3>
+          <p>10/07/17</p>
+        </div>
+        <div class="message-body">
+          <p><strong>From <%= booking.start_datetime %> to <%= booking.end_datetime %></strong></p>
+          <p>
+            I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
+          </p>
+        </div>
+        <div class="message-status">
+          <p class="status pending"><%= booking.status %></p>
+          <p class="price">€345</p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-sm-offset-2">
+      <h3>My spaces bookings</h3>
+      <% @myspaces.each do |space| %>
+      <% space.bookings.each do |booking| %>
+      <div class="message">
+        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+        <div class="message-name">
+          <h3><%= booking.user.name %></h3>
+          <p>10/07/17</p>
+        </div>
+        <div class="message-body">
+          <p><strong>From <%= booking.start_datetime %> to <%= booking.end_datetime %></strong></p>
+          <p>
+            I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
+          </p>
+        </div>
+        <div class="message-status">
+          <p class="status pending"><%= booking.status %></p>
+          <p class="price">€345</p>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="text-center">
+    <%= link_to "Back Home", root_path, class: "btn btn-primary" %>
+  </div>
+
+</div>

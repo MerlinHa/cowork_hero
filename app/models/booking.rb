@@ -16,4 +16,8 @@ class Booking < ApplicationRecord
     integer_days = total_days.to_i
     self.coworking_space.price * integer_days
   end
+
+  # def user
+  #   User.find(self.user_id)
+  # end
 end

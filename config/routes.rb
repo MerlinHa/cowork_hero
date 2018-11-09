@@ -1,21 +1,20 @@
 Rails.application.routes.draw do
-  get 'dashboards/mydashboard'
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :coworking_spaces do
     collection do
-      get "myspaces", to: 'coworking_spaces#myspaces'
+      get "/myspaces", to: 'coworking_spaces#myspaces'
     end
     resources :bookings, except: [:index]
   end
   resources :bookings, only: [:index] do
     collection do
-      get "mybookings", to: 'bookings#mybookings'
+      get "/mybookings", to: 'bookings#mybookings'
     end
     resources :reviews, only: [:new, :create]
   end
-  get "/mydashboard", to: 'dashboard#mydashboard'
+  get "/mydashboard", to: 'dashboards#mydashboard'
 end
 
 
