@@ -2,6 +2,16 @@ class CoworkingSpacesController < ApplicationController
 
   def index
     @coworking_spaces = CoworkingSpace.all
+
+    @coworking_spaces_two = CoworkingSpace.where.not(latitude: nil, longitude: nil)
+
+    @markers = @coworking_spaces_two.map do |flat|
+      {
+        lat: CoworkingSpace.latitude,
+        lng: CoworkingSpace.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
   end
 
   def new

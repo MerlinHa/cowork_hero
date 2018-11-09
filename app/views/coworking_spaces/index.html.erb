@@ -8,7 +8,7 @@
             Popular
           </div>
           <div class="card-description card-description-index">
-            <h2><%= space.name %>, <%= space.location %></h2>
+            <h2><%= space.name %>, <%= space.city %></h2>
             <%= link_to space.name, coworking_space_path(space) %>
             <p>Djungle Coworking Space</p>
           </div>
@@ -22,7 +22,10 @@
       <% end %>
     </div>
  </div>
-  <div id="mymap">
-    <img class="maps-index" src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/w_1164,c_limit/GoogleMapTA.jpg">
-  </div>
+  <div
+  id="map" class="mymap"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+></div>
 </div>

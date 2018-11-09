@@ -9,15 +9,15 @@ display: flex;
 // justify-content: space-between;
 }
 
-#mymap {
+.mymap {
   top: 0 !important;
   height: 100vh;
   width: 100%;
   position: sticky !important;
-  img {
-    height: inherit;
-    width: inherit;
-  }
+  // img {
+  //   height: inherit;
+  //   width: inherit;
+  // }
 }
 
 .cards-container {
