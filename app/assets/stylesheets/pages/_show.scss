@@ -7,11 +7,12 @@ height: calc(100vh - 270px);
 
 }
 
+
 #coworking-picture {
 flex: 0 0 75%;
-background-image: url(https://source.unsplash.com/random);
+background-image: url(https://cdn-images-1.medium.com/max/1600/1*LYhgLWlP3xct4D66ySur5w.png);
 background-repeat: no-repeat;
-background-size: auto;
+background-size: cover;
 position: relative;
 }
 
@@ -43,3 +44,24 @@ height: calc(100vh - 270px);
 // .text-center {
 //   text-align: center;
 // }
+
+.checked {
+    color: orange;
+}
+
+.icon {
+  color: gray;
+}
+
+#service-amenities {
+  background-color: rgb(220, 220, 220);
+}
+
+ul {
+    list-style-type: none;
+}
+
+.section {
+
+  font-weight: bold;
+}
