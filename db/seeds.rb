@@ -22,7 +22,7 @@ User.create!({
 
 CoworkingSpace.create!({
   name: "Dojo",
-  capacity: "50",
+  capacity: 50,
   price: 30,
   services: "Washroom",
   user_id: 3,
@@ -31,12 +31,14 @@ CoworkingSpace.create!({
   address: "No. 88 Jalan Batu Mejan",
   city: "Canggu",
   country: "Indonesia",
-  zip: 80361
+  zip: 80361,
+  latitude: -8.6534647,
+  longitude: 115.1245233
   })
 
 CoworkingSpace.create!({
   name: "Hubud",
-  capacity: "80",
+  capacity: 80,
   price: 25,
   services: "Internet",
   user_id: 2,
@@ -45,12 +47,14 @@ CoworkingSpace.create!({
   address: "Monkey Forest Road 88x",
   city: "Ubud",
   country: "Indonesia",
-  zip: 80571
+  zip: 80571,
+  latitude: -8.5180417,
+  longitude: 115.2591933
   })
 
 CoworkingSpace.create!({
   name: "Outpost",
-  capacity: "30",
+  capacity: 30,
   price: 10,
   services: "Pool",
   user_id: 1,
@@ -59,13 +63,14 @@ CoworkingSpace.create!({
   address: "Jl. Raya Semat No.1",
   city: "Canggu",
   country: "Indonesia",
-  zip: 80361
+  zip: 80361,
+  latitude: -8.6579883,
+  longitude: 115.1380277
   })
 
 CoworkingSpace.create!({
   name: "District",
-  location: "Berawa",
-  capacity: "40",
+  capacity: 40,
   price: 40,
   services: "Rice fields, Cafe",
   user_id: 1,
@@ -74,5 +79,7 @@ CoworkingSpace.create!({
   address: "Jl. Pantai Berawa No.9090",
   city: "Canggu",
   country: "Indonesia",
-  zip: 80361
+  zip: 80361,
+  latitude: -8.6602651,
+  longitude: 115.1386477
   })

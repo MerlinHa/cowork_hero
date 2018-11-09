@@ -5,10 +5,10 @@ class CoworkingSpacesController < ApplicationController
 
     @coworking_spaces_two = CoworkingSpace.where.not(latitude: nil, longitude: nil)
 
-    @markers = @coworking_spaces_two.map do |flat|
+    @markers = @coworking_spaces_two.map do |space|
       {
-        lat: CoworkingSpace.latitude,
-        lng: CoworkingSpace.longitude#,
+        lat: space.latitude,
+        lng: space.longitude#,
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
       }
     end
