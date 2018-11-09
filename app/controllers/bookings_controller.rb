@@ -9,6 +9,10 @@ class BookingsController < ApplicationController
     @coworking_space = CoworkingSpace.find(params[:coworking_space_id])
   end
 
+  def index
+    @bookings = current_user.bookings
+  end
+
   def create
     @booking = Booking.new(booking_params) # creating the object with the filteredform data
     @coworking_space = CoworkingSpace.find(params[:coworking_space_id]) # grabbing the coworking_space by the id in params

@@ -16,13 +16,13 @@ Thank you for your reservation, happy coworking:
 
           <div class="card-date">
             <p>
-              Dates reserved -->
+              Dates reserved :
               From: < <%= @booking.start_datetime %> <  To: < <%= @booking.end_datetime %> >
             </p>
           </div>
           <p>
-            Price:
-            <%= @booking.coworking_space.price %> --> price for one day
+            Price for a day:
+            <%= @booking.coworking_space.price %>
           </p>
           <p>
             Total Price:
@@ -38,7 +38,7 @@ Thank you for your reservation, happy coworking:
           </p>
           <p>
             Location::
-            <%= @booking.coworking_space.location %>
+            <%= @booking.coworking_space.address %>
           </p>
           <p>
             Capacity:
