@@ -16,5 +16,3 @@ Rails.application.routes.draw do
   end
   get "/mydashboard", to: 'dashboards#mydashboard'
 end
-
-

@@ -117,10 +117,18 @@
   border-width: 0.5px;
   border-color: lightgrey;
   border-style: solid;
-  margin: 10px;
+  margin: 5px 15px;
+  text-shadow: 0 0 0!important;
+  background-color: #FCFCFC !important;
 }
 .card-category-index {
-  color: #FE5D5D
+  color: #FE5D5D;
+  left: 470px !important;
+  // right: 340px !important;
+}
+
+.card-description {
+  // bottom: 60px !important;
 }
 
 .card-description-index h2 {
