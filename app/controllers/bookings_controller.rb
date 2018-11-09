@@ -5,8 +5,10 @@ class BookingsController < ApplicationController
   end
 
   def new
+      @coworking_space = CoworkingSpace.find(params[:coworking_space_id])
+
     @booking = Booking.new
-    @coworking_space = CoworkingSpace.find(params[:coworking_space_id])
+
   end
 
   def mybookings
@@ -14,8 +16,8 @@ class BookingsController < ApplicationController
   end
 
   def create
+     @coworking_space = CoworkingSpace.find(params[:coworking_space_id]) # grabbing the coworking_space by the id in params
     @booking = Booking.new(booking_params) # creating the object with the filteredform data
-    @coworking_space = CoworkingSpace.find(params[:coworking_space_id]) # grabbing the coworking_space by the id in params
     @booking.coworking_space = @coworking_space # setting the coworking_space on the booking (saving the relationship)
     @booking.user = current_user
     if @booking.save
