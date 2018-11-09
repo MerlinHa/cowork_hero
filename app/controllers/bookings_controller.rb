@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     @coworking_space = CoworkingSpace.find(params[:coworking_space_id])
   end
 
-  def index
+  def mybookings
     @bookings = current_user.bookings
   end
 
