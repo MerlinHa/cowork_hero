@@ -17,7 +17,10 @@
             <div class="card-price">
               <p><%= space.price %>$</p>
             </div>
-            <img class="card-picture" src="http://blog.copass.org/wp-content/uploads/2015/01/finalBLOG-770x402.jpg">
+            <!-- <img class="card-picture" src="http://blog.copass.org/wp-content/uploads/2015/01/finalBLOG-770x402.jpg"> -->
+            <div class="card-picture">
+              <%= cl_image_tag("#{space.photo_id}", :width=> 300, :height=>173, :radius=>5,:effect=>"gradient_fade:10", :crop=>"fill") %>
+            </div>
           </div>
         <% end %>
       </div>
