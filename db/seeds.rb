@@ -8,15 +8,18 @@
 
 User.create!({
   email: "a@a.a",
-  password: "helloworld"
+  password: "helloworld",
+  name: "A"
 })
 User.create!({
   email: "b@b.b",
-  password: "helloworld"
+  password: "helloworld",
+  name: "B"
 })
 User.create!({
   email: "c@c.c",
   password: "helloworld"
+  name: "C"
 })
 
 
