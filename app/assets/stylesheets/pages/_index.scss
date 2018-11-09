@@ -9,18 +9,22 @@ display: flex;
 // justify-content: space-between;
 }
 
-#mymap {
+.mymap {
   top: 0 !important;
-  height: 100vh;
+  height: 100vh !important;
   width: 100%;
   position: sticky !important;
-  img {
-    height: inherit;
-    width: inherit;
-  }
+  // img {
+  //   height: inherit;
+  //   width: inherit;
+  // }
 }
 
 .cards-container {
   flex: 1 0 70%;
 }
 
+.desc {
+  width: 350px;
+  word-wrap: break-word;
+}
