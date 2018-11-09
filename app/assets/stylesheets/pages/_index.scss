@@ -11,7 +11,7 @@ display: flex;
 
 .mymap {
   top: 0 !important;
-  height: 100vh;
+  height: 100vh !important;
   width: 100%;
   position: sticky !important;
   // img {
@@ -24,3 +24,7 @@ display: flex;
   flex: 1 0 70%;
 }
 
+.desc {
+  width: 350px;
+  word-wrap: break-word;
+}
