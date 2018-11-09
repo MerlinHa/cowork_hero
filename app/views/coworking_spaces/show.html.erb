@@ -1,1 +1,89 @@
-<h1>This is the coworking show page</h1>
+
+<h1> Now time to enjoy coworking...</h1>
+
+
+
+<div class="coworking-global-view">
+
+  <div class="first-line">
+    <div id="coworking-summary">
+      <h2>In this location you have selected </h2>
+      <h1><%= @coworking_space.name %>
+      </h1>
+    </div >
+
+    <div id="coworking-picture">
+      <div id="link-photos">
+        <%= link_to "other photos","coworking_spaces_path" %>
+      </div >
+    </div>
+  </div>
+
+  <div class="second-line">
+    <div class="ratings">
+    <h5>
+     stars
+   </h5>
+ </div>
+
+ <div class="remainingseats">
+  <h5 style="font-weight:bold; color:green;">
+    <%= @coworking_space.capacity-4 %>
+  </h5>
+  <h5>
+   seats /  <%= @coworking_space.capacity %>
+ </h5>
+</div>
+
+<div class="monthlyprice text-center">
+  <h5 style="font-weight:bold; color:green;">
+    <%= @coworking_space.price*20 %>
+  </h5>
+  <h5>
+   $ / month
+ </h5>
+</div>
+
+<div class="dailyprice text-center">
+ <h5 style="font-weight:bold; color:green;">
+  <%= @coworking_space.price %>
+</h5>
+<h5>
+ $ / daily
+</h5>
+</div>
+
+<div class="containbutton">
+  <a class="btn btn-primary" href='#'>Booking </a>
+</div>
+
+</div>
+
+</div>
+
+<br>
+<div class="services">
+  You will enjoy the following services:
+  <% @coworking_space.services %>
+</div>
+<br>
+<br>
+
+<div class="row"></div>
+<div class="col-xs-offset-2 col-8"> </div>
+<div class="review"> Review 1
+
+</div>
+
+<div class="row"></div>
+<div class="col-xs-offset-2 col-8"> </div>
+<div class="review"> Review 2
+
+</div>
+
+<div class="row"></div>
+<div class="col-xs-offset-2 col-8"> </div>
+<div class="review"> Review 3
+
+</div>
+

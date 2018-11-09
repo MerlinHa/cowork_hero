@@ -1,5 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "show";
+
 
 .myflexbox {
 display: flex;
@@ -21,3 +23,4 @@ display: flex;
 .cards-container {
   flex: 1 0 70%;
 }
+

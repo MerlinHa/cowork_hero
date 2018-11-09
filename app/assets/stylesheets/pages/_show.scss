@@ -1,0 +1,45 @@
+.coworking-global-view {
+height: calc(100vh - 270px);
+}
+
+#coworking-summary {
+  flex: 0 0 25%;
+
+}
+
+#coworking-picture {
+flex: 0 0 75%;
+background-image: url(https://source.unsplash.com/random);
+background-repeat: no-repeat;
+background-size: auto;
+position: relative;
+}
+
+  #link-photos {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+
+.first-line {
+  height: 85%;
+   display: flex;
+}
+
+.second-line {
+  display: flex;
+  height: 15%;
+  justify-content: space-around;
+  align-items: center;
+  position: sticky !important;
+  background-color: rgb(220, 220, 220);
+
+}
+
+.coworking-global-view {
+height: calc(100vh - 270px);
+}
+
+// .text-center {
+//   text-align: center;
+// }
