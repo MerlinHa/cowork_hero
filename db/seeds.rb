@@ -73,7 +73,7 @@ CoworkingSpace.create!({
   capacity: 40,
   price: 40,
   services: "Rice fields, Cafe",
-  user_id: 1,
+  user_id: 2,
   short_desc: "district (previously c'ugh house) is a resto cafe & bar serving naturally healthy and delicious breakfasts, lunches, dinners, barista coffees, smoothies and juices",
   long_desc: "while our ground floor is geared towards a resto cafe and bar vibe, our first floor is dedicated as a coworking space for those who purchase a fibreoptic broadband package, designed for those who like to be in a cafe environment with a bit of this and that going on nearby.  here, we have a high-speed (45 mbps) fibreoptic broadband line at a competitive price (see below) in bali.  we limit each user to 20 mbps to ensure no one individual can consume all bandwidth.  we provide a mix of seating options using tables at standing (adjustable), normal and low heights in different areas with specific purposes in mind; for example, large and small air-conditioned quiet rooms (available for hire as meeting/event rooms), group spaces and an open lounge space.  you can also enjoy anything from the menu up here too.",
   address: "Jl. Pantai Berawa No.9090",
@@ -82,4 +82,20 @@ CoworkingSpace.create!({
   zip: 80361,
   latitude: -8.6602651,
   longitude: 115.1386477
+  })
+
+CoworkingSpace.create!({
+  name: "Outpost",
+  capacity: 35,
+  price: 25,
+  services: "Nice staff",
+  user_id: 1,
+  short_desc: "Outpost is a network of coliving, coworking and social spaces for location-independent entrepreneurs, creatives and professionals.",
+  long_desc: "Outpost is a home base for a fast-growing community of global citizens seeking to design life on their own terms in idyllic destinations. From modern coworking spaces with an active community to comfortable coliving, each Outpost neighborhood has been created to help you feel connected and productive from the moment you arrive. Our mission is to help you join the remote revolution and design your best life.",
+  address: "Jl. Raya Nyuh Kuning",
+  city: "Ubud",
+  country: "Indonesia",
+  zip: 80571,
+  latitude: -8.527722,
+  longitude: 115.255759
   })
