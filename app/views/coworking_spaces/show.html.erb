@@ -2,6 +2,7 @@
 <h1> Now time to enjoy coworking...</h1>
 
 <div class="container">
+<div class="container">
   <div class="coworking-global-view">
 
     <div class="first-line">
@@ -62,7 +63,10 @@
 </div>
 
 <div class="containbutton">
-  <a class="btn btn-primary" href='#'>Booking </a>
+  <%= link_to new_coworking_space_booking_path(@coworking_space), class:"btn btn-primary" do %>
+  <div>Booking </div>
+  <% end %>
+
 </div>
 
 </div>
@@ -73,13 +77,14 @@
 <br>
 <div class="services">
   You will enjoy the following services:
+  <br>
   <% @coworking_space.services %>
   <div class="panel panel--padded--thin" id="service-amenities">
     <div class="panel__content">
       <div class="pin-columns">
 
         <div class="pin">
-          <h5 class="section">Technology</h5>
+          <h5 class="section">  Technology</h5>
           <ul class="services-amenities">
 
 
@@ -108,7 +113,7 @@
         </div>
 
         <div class="pin">
-          <h5 class="section">Transport</h5>
+          <h5 class="section">  Transport</h5>
           <ul class="services-amenities">
 
             <li>
@@ -122,7 +127,7 @@
         </div>
 
         <div class="pin">
-          <h5 class="section">Extra</h5>
+          <h5 class="section">  Extra</h5>
           <ul class="services-amenities">
 
             <li>
@@ -229,6 +234,7 @@
     </div>
   </div>
 
+
   <div class="row">
     <div class="col-xs-12">
 
@@ -261,11 +267,37 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-xs-12">
+
+      <div class="message">
+        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+        <div class="message-name">
+          <h3>Marcel </h3>
+          <p>22/07/18</p>
+        </div>
+        <div class="message-body">
+          <p><strong>Perfect </strong></p>
+          <p>
+            Very quiet place and good view
+          </p>
+        </div>
+        <div class="message-status">
+          <p class="status pending">Excellent!</p>
+          <p class="price">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>
-
-
-
-
 
 
