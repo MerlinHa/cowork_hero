@@ -15,13 +15,14 @@ class CoworkingSpacesController < ApplicationController
   end
 
   def show
-    @coworking_space = CoworkingSpace.find(params_coworkings)
+    @coworking_space = CoworkingSpace.find(params[:id])
   end
 
 
   private
 
   def params_coworking_space
-    params.require(:coworking_space).permit(:location, :capacity, :services, :price, :name)
+    params.require(:coworking_space)
+
   end
 end
