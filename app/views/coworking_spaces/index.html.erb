@@ -19,7 +19,8 @@
             </div>
             <!-- <img class="card-picture" src="http://blog.copass.org/wp-content/uploads/2015/01/finalBLOG-770x402.jpg"> -->
             <div class="card-picture">
-              <%= cl_image_tag("#{space.photo_id}", :width=> 300, :height=>173, :radius=>5,:effect=>"gradient_fade:10", :crop=>"fill") %>
+            <%= cl_image_tag "#{space.photo}", :width=> 300, :height=>173, :radius=>10, :effect=>"gradient_fade:10", :crop=>"fill" %>
+              <%#= image_tag "#{space.photo(:card)}" %>
             </div>
           </div>
         <% end %>
