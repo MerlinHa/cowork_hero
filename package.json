@@ -5,10 +5,15 @@
     "@rails/webpacker": "3.5",
     "bootstrap": "3",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "flatpickr": "^4.5.2",
 =======
     "gmaps": "^0.4.24",
 >>>>>>> master
+=======
+    "flatpickr": "^4.5.2",
+    "gmaps": "^0.4.24",
+>>>>>>> 43d66b595f364c935f2b8ee2cb744b65fab34514
     "jquery": "^3.3.1"
   },
   "devDependencies": {

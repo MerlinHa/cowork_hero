@@ -1,27 +1,34 @@
 <div class="myflexbox">
   <div class="cards-container">
+    <div class="row col-md-4 col-md-offset-4" id="searchbar">
+      <%= form_tag coworking_spaces_path, method: :get do %>
+      <%= text_field_tag :query,
+      params[:query], class: "form-control", placeholder: "Find a location"%>
+      <% end %>
+    </div>
     <div class="row">
       <% @coworking_spaces.each do |space| %>
       <div class="col-xs-12">
-          <%= link_to coworking_space_path(space) do %>
-          <div class="card card-index" style="background-color: #F4F4F4">
-            <div class="card-category card-category-index">
-              Popular
-            </div>
-            <div class="card-description card-description-index">
-              <h2><%= space.name %>, <%= space.city %></h2>
-              <div class="desc">
-                <p><%= space.short_desc %></p>
-              </div>
-            </div>
-            <div class="card-price">
-              <p><%= space.price %>$</p>
-            </div>
-            <!-- <img class="card-picture" src="http://blog.copass.org/wp-content/uploads/2015/01/finalBLOG-770x402.jpg"> -->
-            <div class="card-picture">
-              <%= cl_image_tag("#{space.photo_id}", :width=> 300, :height=>173, :radius=>5,:effect=>"gradient_fade:10", :crop=>"fill") %>
+        <%= link_to coworking_space_path(space) do %>
+        <div class="card card-index" style="background-color: #F4F4F4">
+          <div class="card-category card-category-index">
+            Popular
+          </div>
+          <div class="card-description card-description-index">
+            <h2><%= space.name %>, <%= space.city %></h2>
+            <div class="desc">
+              <p><%= space.short_desc %></p>
             </div>
           </div>
+          <div class="card-price">
+            <p><%= space.price %>$</p>
+          </div>
+          <!-- <img class="card-picture" src="http://blog.copass.org/wp-content/uploads/2015/01/finalBLOG-770x402.jpg"> -->
+          <div class="card-picture">
+            <%= cl_image_tag "#{space.photo}", :width=> 300, :height=>173, :radius=>10, :effect=>"gradient_fade:10", :crop=>"fill" %>
+            <%#= image_tag "#{space.photo(:card)}" %>
+          </div>
+        </div>
         <% end %>
       </div>
       <% end %>
