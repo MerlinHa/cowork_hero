@@ -4,9 +4,11 @@
   <div class="banner-content">
     <h1>Cowork-hero</h1>
     <p>Find & book the best co-working spaces</p>
-    <%= link_to coworking_spaces_path, class:"btn btn-primary btn-lg" do %>
-      <div>Start now</div>
-    <% end %>
+      <%= form_tag coworking_spaces_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query], class: "form-control", placeholder: "Find a location"%>
+<% end %>
+      </div>
   </div>
 </div>
 <div class="container">
