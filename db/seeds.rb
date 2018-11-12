@@ -107,3 +107,9 @@ CoworkingSpace.create!({
   longitude: 115.255759,
   photo_id: "m9lp7blcngnnj6gns8vr"
   })
+
+
+
+
+
+
