@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_09_035834) do
+ActiveRecord::Schema.define(version: 2018_11_09_133414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2018_11_09_035834) do
     t.integer "zip"
     t.string "city"
     t.string "country"
+    t.string "photo_id"
     t.index ["user_id"], name: "index_coworking_spaces_on_user_id"
   end
 
