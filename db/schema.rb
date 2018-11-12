@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_12_090017) do
+
+ActiveRecord::Schema.define(version: 2018_11_12_071559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,10 +21,10 @@ ActiveRecord::Schema.define(version: 2018_11_12_090017) do
     t.string "start_datetime"
     t.string "end_datetime"
     t.integer "total_price"
-    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.boolean "status", default: false
     t.index ["coworking_space_id"], name: "index_bookings_on_coworking_space_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -55,6 +56,8 @@ ActiveRecord::Schema.define(version: 2018_11_12_090017) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.integer "star", default: 0, null: false
+    t.string "title"
     t.index ["booking_id"], name: "index_reviews_on_booking_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end

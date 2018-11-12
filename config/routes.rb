@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:index] do
     collection do
-      get "/mybookings", to: 'bookings#mybookings'
+      get "/mybookings", to: 'bookings#mybookings', as: :mybookings
+    end
+    member do
+      patch "/approve", to: 'bookings#approve'
+      # "bookings/:id/approve"
     end
     resources :reviews, only: [:new, :create]
   end
