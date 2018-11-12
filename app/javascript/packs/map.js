@@ -12,9 +12,29 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   } else if (markers.length === 1) {
     map.setCenter(markers[0].lat, markers[0].lng);
     map.setZoom(14);
-  } else {
-    map.fitLatLngBounds(markers);
+    var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">#{space.name}</h1>'+
+      '</div>';
+
+    var infowindow = new google.maps.InfoWindow({
+    content: contentString
+    });
+
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map,
+      title: "#{space.name}"
+    });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+    } else {
+      map.fitLatLngBounds(markers);
+    }
   }
-}
 
 autocomplete();
+
+
