@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row text-center">
-    <div class="col-md-8 col-sm-offset-2">
+    <div class="col-md-6 col-md-offset-3">
       <h3>My bookings</h3>
       <% @mybookings.each do |booking| %>
-      <div class="row" style="margin-bottom: 10px">
+      <div class="row">
         <div class="message">
           <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
           <div class="message-name">
@@ -28,13 +28,13 @@
         </div>
         <%= link_to "Update", edit_coworking_space_booking_path(booking.coworking_space, booking), class: "btn btn-primary" %>
         <%= link_to "Approve", approve_booking_path(booking), method: :patch, class: "btn btn-primary" %>
-
+        <%= link_to "create review", new_booking_review_path(booking), class: "btn btn-primary"%>
       </div>
-      <% end %>
+    <% end %>
     </div>
   </div>
   <div class="row text-center">
-    <div class="col-md-8 col-sm-offset-2">
+    <div class="col-md-6 col-md-offset-3">
       <h3>My spaces bookings</h3>
       <% @myspaces.each do |space| %>
       <% space.bookings.each do |booking| %>
@@ -59,8 +59,39 @@
       <% end %>
     </div>
   </div>
-  <div class="text-center">
-    <%= link_to "Back Home", root_path, class: "btn btn-primary" %>
-  </div>
+  <div class="row text-center">
+    <div class="col-md-12">
+      <h3>My reviews</h3>
 
+      <% @myreviews.each do |review| %>
+      <div class="message">
+        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+
+        <div class="message-name">
+          <h3><%= review.title %> Placeholder</h3>
+          <p>Place holder enddate of the booking</p>
+        </div>
+
+        <div class="message-body">
+          <p><%= review.content %>
+          </p>
+        </div>
+
+        <div class="message-status">
+          <p class="status pending"><%= review.star %></p>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <% (5-(review.star)).times do %>
+          <span class="fa fa-star checked"></span>
+          <% end %>
+          <% (review.star).times do %>
+          <span class="fa fa-star "></span>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div class="text-center">
+      <%= link_to "Back Home", root_path, class: "btn btn-primary" %>
+    </div>
+  </div>
 </div>
