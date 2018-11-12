@@ -32,7 +32,7 @@ dojo = CoworkingSpace.create!({
   price: 30,
   services: "Washroom",
 
-  user_id: 3,
+  user_id: User.all.sample.id,
   short_desc: "Dojo Bali located one minute walk from Echo Beach, Canggu on the beautiful island of Bali, Indonesia",
   long_desc: "Dojo Coworking is really about our people, it’s about a highly motivated international & local community learning and collaborating, it’s not about fancy buildings (although they are nice), or how big the coworking space is, or how fast the internet connection is, it’s about real lasting human connections. Coworking at Dojo is highly productive with a quiet hum in the air and many different physical spaces & nooks to choose from, you will work alongside other like-minded people. The opportunity to mingle and network with other digital nomads and entrepreneurs is second to none.  Get involved..",
   address: "No. 88 Jalan Batu Mejan",
@@ -42,7 +42,7 @@ dojo = CoworkingSpace.create!({
   latitude: -8.6534647,
   longitude: 115.1245233,
 
-  photo_id: "jvgrqyl78ja55vabdnuy"
+  photo_id: "jvgrqyl78ja55vabdnuy",
 
   photo: "jvgrqyl78ja55vabdnuy"
   })
@@ -54,7 +54,7 @@ hubud = CoworkingSpace.create!({
   capacity: 80,
   price: 25,
   services: "Internet",
-  user_id: 2,
+  user_id: User.all.sample.id,
   short_desc: "Hubud is a coworking space and community that’s leading the global movement of location independence in life + business. ",
   long_desc: "It’s about collaborating on the world’s next big innovation, experimenting with your personal re-invention, or sinking deep into a creative business pursuit. It’s about play + productivity + purpose. Most of all, it’s about discovering the freedom and satisfaction of choosing a life that aligns with your most genuine self—and having a crew of like-minded dreamers + doers beside you for the ride.",
   address: "Monkey Forest Road 88x",
@@ -63,7 +63,7 @@ hubud = CoworkingSpace.create!({
   zip: 80571,
   latitude: -8.5180417,
   longitude: 115.2591933,
-  photo_id: "hvolxl8zw04fsqk2v3fb"
+  photo_id: "hvolxl8zw04fsqk2v3fb",
 
   photo: "hvolxl8zw04fsqk2v3fb"
 
@@ -77,7 +77,7 @@ outpost_canggu = CoworkingSpace.create!({
   price: 10,
   services: "Pool",
 
-  user_id: 1,
+  user_id: User.all.sample.id,
   short_desc: "Outpost is a network of coliving, coworking and social spaces for location-independent entrepreneurs, creatives and professionals.",
   long_desc: "Outpost is a home base for a fast-growing community of global citizens seeking to design life on their own terms in idyllic destinations. From modern coworking spaces with an active community to comfortable coliving, each Outpost neighborhood has been created to help you feel connected and productive from the moment you arrive. Our mission is to help you join the remote revolution and design your best life.",
   address: "Jl. Raya Semat No.1",
@@ -87,7 +87,7 @@ outpost_canggu = CoworkingSpace.create!({
   latitude: -8.6579883,
   longitude: 115.1380277,
 
-  photo_id: "j8gidjp5yv4onybvo9jl"
+  photo_id: "j8gidjp5yv4onybvo9jl",
 
   photo: "j8gidjp5yv4onybvo9jl"
 
@@ -101,7 +101,7 @@ district = CoworkingSpace.create!({
   price: 40,
   services: "Rice fields, Cafe",
 
-  user_id: 2,
+  user_id: User.all.sample.id,
   short_desc: "district (previously c'ugh house) is a resto cafe & bar serving naturally healthy and delicious breakfasts, lunches, dinners, barista coffees, smoothies and juices",
   long_desc: "while our ground floor is geared towards a resto cafe and bar vibe, our first floor is dedicated as a coworking space for those who purchase a fibreoptic broadband package, designed for those who like to be in a cafe environment with a bit of this and that going on nearby.  here, we have a high-speed (45 mbps) fibreoptic broadband line at a competitive price (see below) in bali.  we limit each user to 20 mbps to ensure no one individual can consume all bandwidth.  we provide a mix of seating options using tables at standing (adjustable), normal and low heights in different areas with specific purposes in mind; for example, large and small air-conditioned quiet rooms (available for hire as meeting/event rooms), group spaces and an open lounge space.  you can also enjoy anything from the menu up here too.",
   address: "Jl. Pantai Berawa No.9090",
@@ -120,7 +120,7 @@ district = CoworkingSpace.create!({
   capacity: 35,
   price: 25,
   services: "Nice staff",
-  user_id: 1,
+  user_id: User.all.sample.id,
   short_desc: "Outpost is a network of coliving, coworking and social spaces for location-independent entrepreneurs, creatives and professionals.",
   long_desc: "Outpost is a home base for a fast-growing community of global citizens seeking to design life on their own terms in idyllic destinations. From modern coworking spaces with an active community to comfortable coliving, each Outpost neighborhood has been created to help you feel connected and productive from the moment you arrive. Our mission is to help you join the remote revolution and design your best life.",
   address: "Jl. Raya Nyuh Kuning",
@@ -129,7 +129,7 @@ district = CoworkingSpace.create!({
   zip: 80571,
   latitude: -8.527722,
   longitude: 115.255759,
-  photo_id: "m9lp7blcngnnj6gns8vr"
+  photo_id: "m9lp7blcngnnj6gns8vr",
 
   photo: "m9lp7blcngnnj6gns8vr"
 

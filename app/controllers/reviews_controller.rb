@@ -21,7 +21,7 @@ end
   private
 
   def params_review
-    params.require(:review).permit(:stars, :content)
+    params.require(:review).permit(:star, :content, :title)
   end
 
 end
