@@ -37,7 +37,7 @@ class CoworkingSpacesController < ApplicationController
   private
 
   def params_coworking_space
-    params.require(:coworking_space).permit(:capacity, :services, :price, :name, :user_id, :latitude, :longitude, :address, :city, :short_desc, :long_desc, :zip, :country)
+    params.require(:coworking_space).permit(:capacity, :services, :price, :name, :user_id, :latitude, :longitude, :address, :city, :short_desc, :long_desc, :zip, :country, :photo, :photo_id)
 
   end
 end
