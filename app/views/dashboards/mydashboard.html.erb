@@ -1,8 +1,6 @@
 <div class="container">
-
-
   <div class="row text-center">
-    <div class="col-md-12">
+    <div class="col-md-6 col-md-offset-3">
       <h3>My bookings</h3>
       <% @mybookings.each do |booking| %>
       <div class="row">
@@ -30,21 +28,13 @@
         </div>
         <%= link_to "Update", edit_coworking_space_booking_path(booking.coworking_space, booking), class: "btn btn-primary" %>
         <%= link_to "Approve", approve_booking_path(booking), method: :patch, class: "btn btn-primary" %>
-        <div class="containbutton">
-          <%= link_to new_booking_review_path(booking), class:"btn btn-primary" do %>
-          <div>Create your review </div>
-          <% end %>
-        </div>
+        <%= link_to "create review", new_booking_review_path(booking), class: "btn btn-primary"%>
       </div>
-
-      <% end %>
+    <% end %>
     </div>
   </div>
-
-
-
   <div class="row text-center">
-    <div class="col-md-12">
+    <div class="col-md-6 col-md-offset-3">
       <h3>My spaces bookings</h3>
       <% @myspaces.each do |space| %>
       <% space.bookings.each do |booking| %>
@@ -69,8 +59,6 @@
       <% end %>
     </div>
   </div>
-
-
   <div class="row text-center">
     <div class="col-md-12">
       <h3>My reviews</h3>
@@ -100,13 +88,10 @@
           <% end %>
         </div>
       </div>
-       <% end %>
+      <% end %>
     </div>
-
-
-
     <div class="text-center">
       <%= link_to "Back Home", root_path, class: "btn btn-primary" %>
     </div>
-
   </div>
+</div>
