@@ -30,6 +30,25 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
+  def edit
+     @booking = Booking.find(params[:id])
+     @coworking_space = CoworkingSpace.find(params[:coworking_space_id])
+
+  end
+
+  def update
+     @booking = Booking.find(params[:coworking_space_id])
+     @booking.update(booking_params)
+     redirect_to mydashboard_path
+  end
+
+  def approve
+    @booking = Booking.find(params[:id])
+    @booking.status = true
+    @booking.save
+    redirect_to mydashboard_path
+  end
+
   private
 
   def booking_params
