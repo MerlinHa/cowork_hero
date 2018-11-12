@@ -36,7 +36,8 @@ CoworkingSpace.create!({
   country: "Indonesia",
   zip: 80361,
   latitude: -8.6534647,
-  longitude: 115.1245233
+  longitude: 115.1245233,
+  photo_id: "jvgrqyl78ja55vabdnuy"
   })
 
 CoworkingSpace.create!({
@@ -52,7 +53,8 @@ CoworkingSpace.create!({
   country: "Indonesia",
   zip: 80571,
   latitude: -8.5180417,
-  longitude: 115.2591933
+  longitude: 115.2591933,
+  photo_id: "hvolxl8zw04fsqk2v3fb"
   })
 
 CoworkingSpace.create!({
@@ -68,7 +70,8 @@ CoworkingSpace.create!({
   country: "Indonesia",
   zip: 80361,
   latitude: -8.6579883,
-  longitude: 115.1380277
+  longitude: 115.1380277,
+  photo_id: "j8gidjp5yv4onybvo9jl"
   })
 
 CoworkingSpace.create!({
@@ -84,7 +87,8 @@ CoworkingSpace.create!({
   country: "Indonesia",
   zip: 80361,
   latitude: -8.6602651,
-  longitude: 115.1386477
+  longitude: 115.1386477,
+  photo_id: "gezzafjwcc6o4ek5o27y"
   })
 
 CoworkingSpace.create!({
@@ -100,5 +104,6 @@ CoworkingSpace.create!({
   country: "Indonesia",
   zip: 80571,
   latitude: -8.527722,
-  longitude: 115.255759
+  longitude: 115.255759,
+  photo_id: "m9lp7blcngnnj6gns8vr"
   })
