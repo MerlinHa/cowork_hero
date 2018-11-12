@@ -7,5 +7,11 @@
   <%= f.submit 'Confirm', class: "btn btn-primary" %>
   </div>
 <% end %>
-</div>
-</div>
+
+<script>
+  //const flatpickr = require("flatpickr");
+  console.log(flatpickr)
+  flatpickr("#booking_start_datetime", {});
+  flatpickr("#booking_end_datetime", {});
+</script>
+

@@ -18,8 +18,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params) # creating the object with the filteredform data
     @booking.coworking_space = @coworking_space # setting the coworking_space on the booking (saving the relationship)
     @booking.user = current_user
+
     if @booking.save
-      redirect_to coworking_space_booking_path(@coworking_space, @booking) # redirecting back to the coworking show path
+      redirect_to coworking_space_booking_path(@coworking_space, @booking) # redirecting back to the BOOKING show path
     else
       render :new
     end   # saving the object
