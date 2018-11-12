@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:index] do
     collection do
-      get "/mybookings", to: 'bookings#mybookings'
+      get "/mybookings", to: 'bookings#mybookings', as: :mybookings
     end
     resources :reviews, only: [:new, :create]
   end
