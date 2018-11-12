@@ -9,9 +9,6 @@
 
     "gmaps": "^0.4.24",
 
-    "flatpickr": "^4.5.2",
-    "gmaps": "^0.4.24",
-
     "jquery": "^3.3.1"
   },
   "devDependencies": {
