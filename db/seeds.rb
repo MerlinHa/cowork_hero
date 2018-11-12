@@ -23,7 +23,7 @@ User.create!({
 })
 
 
-CoworkingSpace.create!({
+dojo = CoworkingSpace.create!({
   name: "Dojo",
   capacity: 50,
   price: 30,
@@ -39,8 +39,10 @@ CoworkingSpace.create!({
   longitude: 115.1245233,
   photo: "jvgrqyl78ja55vabdnuy"
   })
+dojo.remote_photo_url = "https://res.cloudinary.com/merlinha/image/upload/v1541770619/jvgrqyl78ja55vabdnuy.jpg"
+dojo.save
 
-CoworkingSpace.create!({
+hubud = CoworkingSpace.create!({
   name: "Hubud",
   capacity: 80,
   price: 25,
@@ -56,8 +58,10 @@ CoworkingSpace.create!({
   longitude: 115.2591933,
   photo: "hvolxl8zw04fsqk2v3fb"
   })
+hubud.remote_photo_url = "https://res.cloudinary.com/merlinha/image/upload/v1541770658/hvolxl8zw04fsqk2v3fb.jpg"
+hubud.save
 
-CoworkingSpace.create!({
+outpost_canggu = CoworkingSpace.create!({
   name: "Outpost",
   capacity: 30,
   price: 10,
@@ -73,8 +77,10 @@ CoworkingSpace.create!({
   longitude: 115.1380277,
   photo: "j8gidjp5yv4onybvo9jl"
   })
+outpost_canggu.remote_photo_url = "https://res.cloudinary.com/merlinha/image/upload/v1541770689/j8gidjp5yv4onybvo9jl.jpg"
+outpost_canggu.save
 
-CoworkingSpace.create!({
+district = CoworkingSpace.create!({
   name: "District",
   capacity: 40,
   price: 40,
@@ -90,8 +96,10 @@ CoworkingSpace.create!({
   longitude: 115.1386477,
   photo: "gezzafjwcc6o4ek5o27y"
   })
+ district.remote_photo_url = "https://res.cloudinary.com/merlinha/image/upload/v1541770367/gezzafjwcc6o4ek5o27y.jpg"
+ district.save
 
-CoworkingSpace.create!({
+ outpost_ubud = CoworkingSpace.create!({
   name: "Outpost",
   capacity: 35,
   price: 25,
@@ -107,3 +115,6 @@ CoworkingSpace.create!({
   longitude: 115.255759,
   photo: "m9lp7blcngnnj6gns8vr"
   })
+
+ outpost_ubud.remote_photo_url = "https://res.cloudinary.com/merlinha/image/upload/v1541770720/m9lp7blcngnnj6gns8vr.jpg"
+ outpost_ubud.save
