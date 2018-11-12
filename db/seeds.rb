@@ -33,6 +33,12 @@ user_c = User.create!({
 user_c.remote_photo_url = "https://res.cloudinary.com/merlinha/image/upload/v1542014835/chuck-norris-15720761-1-402.jpg"
 user_c.save
 
+user_d = User.create!({
+  email: "d@d.d",
+  password: "helloworld",
+  name: "D"
+})
+
 dojo = CoworkingSpace.create!({
   name: "Dojo",
   capacity: 50,
