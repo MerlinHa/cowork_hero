@@ -19,7 +19,6 @@ class BookingsController < ApplicationController
     @booking.coworking_space = @coworking_space # setting the coworking_space on the booking (saving the relationship)
     @booking.user = current_user
 
-    raise
     if @booking.save
       redirect_to coworking_space_booking_path(@coworking_space, @booking) # redirecting back to the BOOKING show path
     else

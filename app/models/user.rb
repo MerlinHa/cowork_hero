@@ -5,10 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :bookings
 
-  has_many :coworking_spaces, depedent: :destroy
+  has_many :coworking_spaces, dependent: :destroy
   validates :name, presence: true
 
   has_many :coworking_spaces, dependent: :destroy
-  validates :name, presence: true
+  # validates :name, presence: true
 
 end
