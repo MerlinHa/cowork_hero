@@ -15,4 +15,6 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
   end
   get "/mydashboard", to: 'dashboards#mydashboard'
+
+  resources :users, only: [:edit, :update]
 end

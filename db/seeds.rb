@@ -14,24 +14,30 @@ user_a = User.create!({
   password: "helloworld",
   name: "A"
 })
+user_a.remote_photo_url = "https://res.cloudinary.com/merlinha/image/upload/v1542014834/Official_portrait_of_Barack_Obama.jpg"
+user_a.save
+
 user_b = User.create!({
   email: "b@b.b",
   password: "helloworld",
   name: "B"
 })
+user_b.remote_photo_url = "https://res.cloudinary.com/merlinha/image/upload/v1542014835/Download_2.jpg"
+user_b.save
+
 user_c = User.create!({
   email: "c@c.c",
   password: "helloworld",
   name: "C"
 })
-
+user_c.remote_photo_url = "https://res.cloudinary.com/merlinha/image/upload/v1542014835/chuck-norris-15720761-1-402.jpg"
+user_c.save
 
 dojo = CoworkingSpace.create!({
   name: "Dojo",
   capacity: 50,
   price: 30,
   services: "Washroom",
-
   user_id: 3,
   short_desc: "Dojo Bali located one minute walk from Echo Beach, Canggu on the beautiful island of Bali, Indonesia",
   long_desc: "Dojo Coworking is really about our people, it’s about a highly motivated international & local community learning and collaborating, it’s not about fancy buildings (although they are nice), or how big the coworking space is, or how fast the internet connection is, it’s about real lasting human connections. Coworking at Dojo is highly productive with a quiet hum in the air and many different physical spaces & nooks to choose from, you will work alongside other like-minded people. The opportunity to mingle and network with other digital nomads and entrepreneurs is second to none.  Get involved..",
@@ -41,10 +47,6 @@ dojo = CoworkingSpace.create!({
   zip: 80361,
   latitude: -8.6534647,
   longitude: 115.1245233,
-
-  photo_id: "jvgrqyl78ja55vabdnuy"
-
-  photo: "jvgrqyl78ja55vabdnuy"
   })
 dojo.remote_photo_url = "https://res.cloudinary.com/merlinha/image/upload/v1541770619/jvgrqyl78ja55vabdnuy.jpg"
 dojo.save
@@ -63,10 +65,6 @@ hubud = CoworkingSpace.create!({
   zip: 80571,
   latitude: -8.5180417,
   longitude: 115.2591933,
-  photo_id: "hvolxl8zw04fsqk2v3fb"
-
-  photo: "hvolxl8zw04fsqk2v3fb"
-
   })
 hubud.remote_photo_url = "https://res.cloudinary.com/merlinha/image/upload/v1541770658/hvolxl8zw04fsqk2v3fb.jpg"
 hubud.save
@@ -76,7 +74,6 @@ outpost_canggu = CoworkingSpace.create!({
   capacity: 30,
   price: 10,
   services: "Pool",
-
   user_id: 1,
   short_desc: "Outpost is a network of coliving, coworking and social spaces for location-independent entrepreneurs, creatives and professionals.",
   long_desc: "Outpost is a home base for a fast-growing community of global citizens seeking to design life on their own terms in idyllic destinations. From modern coworking spaces with an active community to comfortable coliving, each Outpost neighborhood has been created to help you feel connected and productive from the moment you arrive. Our mission is to help you join the remote revolution and design your best life.",
@@ -86,11 +83,6 @@ outpost_canggu = CoworkingSpace.create!({
   zip: 80361,
   latitude: -8.6579883,
   longitude: 115.1380277,
-
-  photo_id: "j8gidjp5yv4onybvo9jl"
-
-  photo: "j8gidjp5yv4onybvo9jl"
-
   })
 outpost_canggu.remote_photo_url = "https://res.cloudinary.com/merlinha/image/upload/v1541770689/j8gidjp5yv4onybvo9jl.jpg"
 outpost_canggu.save
@@ -100,7 +92,6 @@ district = CoworkingSpace.create!({
   capacity: 40,
   price: 40,
   services: "Rice fields, Cafe",
-
   user_id: 2,
   short_desc: "district (previously c'ugh house) is a resto cafe & bar serving naturally healthy and delicious breakfasts, lunches, dinners, barista coffees, smoothies and juices",
   long_desc: "while our ground floor is geared towards a resto cafe and bar vibe, our first floor is dedicated as a coworking space for those who purchase a fibreoptic broadband package, designed for those who like to be in a cafe environment with a bit of this and that going on nearby.  here, we have a high-speed (45 mbps) fibreoptic broadband line at a competitive price (see below) in bali.  we limit each user to 20 mbps to ensure no one individual can consume all bandwidth.  we provide a mix of seating options using tables at standing (adjustable), normal and low heights in different areas with specific purposes in mind; for example, large and small air-conditioned quiet rooms (available for hire as meeting/event rooms), group spaces and an open lounge space.  you can also enjoy anything from the menu up here too.",
@@ -110,7 +101,6 @@ district = CoworkingSpace.create!({
   zip: 80361,
   latitude: -8.6602651,
   longitude: 115.1386477,
-  photo: "gezzafjwcc6o4ek5o27y"
   })
  district.remote_photo_url = "https://res.cloudinary.com/merlinha/image/upload/v1541770367/gezzafjwcc6o4ek5o27y.jpg"
  district.save
@@ -129,10 +119,6 @@ district = CoworkingSpace.create!({
   zip: 80571,
   latitude: -8.527722,
   longitude: 115.255759,
-  photo_id: "m9lp7blcngnnj6gns8vr"
-
-  photo: "m9lp7blcngnnj6gns8vr"
-
   })
 puts CoworkingSpace.count
  outpost_ubud.remote_photo_url = "https://res.cloudinary.com/merlinha/image/upload/v1541770720/m9lp7blcngnnj6gns8vr.jpg"
