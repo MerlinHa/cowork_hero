@@ -71,8 +71,8 @@
       <div class="message">
         <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
         <div class="message-name">
-          <h3><%= review.title %> Placeholder</h3>
-          <p>Place holder enddate of the booking</p>
+          <h3><%= review.title %> </h3>
+          <p><%= review.  booking.start_datetime %></p>
         </div>
         <div class="message-body">
           <p><%= review.content %>
@@ -82,16 +82,56 @@
         <div class="message-status">
           <p class="status pending"><%= review.star %></p>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-          <% (5-(review.star)).times do %>
+          <% review.star.times do %>
           <span class="fa fa-star checked"></span>
           <% end %>
-          <% (review.star).times do %>
+          <% (5-review.star).times do %>
           <span class="fa fa-star "></span>
           <% end %>
         </div>
         <% end %>
       </div>
     </div>
+
+
+<div class="row text-center">
+    <div class="col-md-12">
+      <h3>My received reviews</h3>
+
+
+
+      <h4>My average rating</h4>
+
+
+
+      <% @myreviews.each do |review| %>
+      <div class="message">
+        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+
+        <div class="message-name">
+          <h3><%= review.title %> </h3>
+          <p><%= review.  booking.start_datetime %></p>
+        </div>
+
+        <div class="message-body">
+          <p><%= review.content %>
+          </p>
+        </div>
+
+        <div class="message-status">
+          <p class="status pending"><%= review.star %></p>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <% review.star.times do %>
+          <span class="fa fa-star checked"></span>
+          <% end %>
+          <% (5-review.star).times do %>
+          <span class="fa fa-star "></span>
+          <% end %>
+        </div>
+      </div>
+       <% end %>
+    </div>
+
     <div class="text-center">
       <%= link_to "Back Home", root_path, class: "btn btn-primary" %>
     </div>
