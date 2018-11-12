@@ -1,7 +1,7 @@
 class CoworkingSpacesController < ApplicationController
   # skip_before_action :authenticate_user!, only: [:index]
   def index
-    @coworking_spaces = CoworkingSpace.all
+    @coworking_spaces = CoworkingSpace.search_by_name(params[:query])
 
     @coworking_spaces_two = CoworkingSpace.where.not(latitude: nil, longitude: nil)
 
