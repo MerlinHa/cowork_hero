@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row text-center">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-12">
       <h3>My bookings</h3>
       <% @mybookings.each do |booking| %>
       <div class="row" style="margin-bottom: 10px">
@@ -30,15 +30,11 @@
         <%= link_to "Approve", approve_booking_path(booking), method: :patch, class: "btn btn-primary" %>
         <%= link_to "create review", new_booking_review_path(booking), class: "btn btn-primary"%>
       </div>
-      <<<<<<< HEAD
       <% end %>
-      =======
-      <% end %>
-      >>>>>>> 1822c801447b5c22066b6ed2d9f6b4e13c48ef94
     </div>
   </div>
   <div class="row text-center">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-12">
       <h3>My spaces bookings</h3>
       <% @myspaces.each do |space| %>
       <% space.bookings.each do |booking| %>
@@ -88,7 +84,6 @@
           <span class="fa fa-star "></span>
           <% end %>
         </div>
-        <% end %>
       </div>
       <% end %>
     </div>
