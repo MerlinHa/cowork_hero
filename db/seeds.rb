@@ -6,15 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!({
+User.destroy_all
+CoworkingSpace.destroy_all
+
+user_a = User.create!({
   email: "a@a.a",
   password: "helloworld"
 })
-User.create!({
+user_b = User.create!({
   email: "b@b.b",
   password: "helloworld"
 })
-User.create!({
+user_c = User.create!({
   email: "c@c.c",
   password: "helloworld"
 })
@@ -26,7 +29,7 @@ CoworkingSpace.create!({
   capacity: "50",
   price: 30,
   services: "Washroom",
-  user_id: 3
+  user: user_a
   })
 
 CoworkingSpace.create!({
@@ -35,7 +38,7 @@ CoworkingSpace.create!({
   capacity: "80",
   price: 25,
   services: "Internet",
-  user_id: 2
+  user: user_b
   })
 
 CoworkingSpace.create!({
@@ -44,7 +47,7 @@ CoworkingSpace.create!({
   capacity: "30",
   price: 10,
   services: "Pool",
-  user_id: 1
+  user: user_c
   })
 
 CoworkingSpace.create!({
@@ -53,5 +56,6 @@ CoworkingSpace.create!({
   capacity: "40",
   price: 40,
   services: "Rice fields, Cafe",
-  user_id: 1
+  user: user_a
   })
+puts CoworkingSpace.count

@@ -14,8 +14,10 @@ class BookingsController < ApplicationController
     @coworking_space = CoworkingSpace.find(params[:coworking_space_id]) # grabbing the coworking_space by the id in params
     @booking.coworking_space = @coworking_space # setting the coworking_space on the booking (saving the relationship)
     @booking.user = current_user
+
+    raise
     if @booking.save
-      redirect_to coworking_space_booking_path(@coworking_space, @booking) # redirecting back to the coworking show path
+      redirect_to coworking_space_booking_path(@coworking_space, @booking) # redirecting back to the BOOKING show path
     else
       render :new
     end   # saving the object

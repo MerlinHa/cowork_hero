@@ -4,3 +4,10 @@
   <%= f.association :coworking_space %>
   <%= f.submit %>
 <% end %>
+
+<script>
+  //const flatpickr = require("flatpickr");
+  console.log(flatpickr)
+  flatpickr("#booking_start_datetime", {});
+  flatpickr("#booking_end_datetime", {});
+</script>
