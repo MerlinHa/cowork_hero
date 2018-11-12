@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.4.4'
 
 gem 'devise'
+gem 'rest-client', '~> 2.0', '>= 2.0.2'
 
 gem 'bootsnap', require: false
 gem 'jbuilder', '~> 2.0'
