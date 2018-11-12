@@ -4,3 +4,5 @@ class DashboardsController < ApplicationController
     @mybookings = current_user.bookings
   end
 end
+
+

@@ -1,3 +1,16 @@
-New review by <%= @current_user %>
+New review by <%= current_user.name %>
 
-for <%= @booking_id.coworking_space.name %>
+<!-- regarding the following place <%= @booking %> -->
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= simple_form_for([@booking @review]) do |f| %>
+      <%= f.input :stars %>
+      <%= f.input :content, as: :text %>
+      <%= f.submit 'Confirm', class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

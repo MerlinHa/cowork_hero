@@ -10,4 +10,10 @@ class ReviewsController < ApplicationController
     redirect_to mydashboard
   end
 
+  private
+
+  def params_review
+    params.require(:review).permit(:stars, :content)
+  end
+
 end
