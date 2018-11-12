@@ -1,1 +1,13 @@
-<h1>edit booking</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <%= simple_form_for([@coworking_space, @booking]) do |f| %>
+      <%= f.input :start_datetime %>
+      <%= f.input :end_datetime %>
+      <%= f.submit 'Confirm', class: "btn btn-primary" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
