@@ -6,17 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!({
+User.destroy_all
+CoworkingSpace.destroy_all
+
+user_a = User.create!({
   email: "a@a.a",
   password: "helloworld",
   name: "A"
 })
-User.create!({
+user_b = User.create!({
   email: "b@b.b",
   password: "helloworld",
   name: "B"
 })
-User.create!({
+user_c = User.create!({
   email: "c@c.c",
   password: "helloworld",
   name: "C"
@@ -115,7 +118,7 @@ district = CoworkingSpace.create!({
   longitude: 115.255759,
   photo: "m9lp7blcngnnj6gns8vr"
   })
-
+puts CoworkingSpace.count
  outpost_ubud.remote_photo_url = "https://res.cloudinary.com/merlinha/image/upload/v1541770720/m9lp7blcngnnj6gns8vr.jpg"
  outpost_ubud.save
 
