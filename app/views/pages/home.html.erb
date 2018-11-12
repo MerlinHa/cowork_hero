@@ -4,7 +4,9 @@
   <div class="banner-content">
     <h1>Cowork-hero</h1>
     <p>Find & book the best co-working spaces</p>
-    <a class="btn btn-primary btn-lg">Start now</a>
+    <%= link_to coworking_spaces_path, class:"btn btn-primary btn-lg" do %>
+      <div>Start now</div>
+    <% end %>
   </div>
 </div>
 <div class="container">

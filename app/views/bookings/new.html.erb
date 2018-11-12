@@ -1,9 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
 <%= simple_form_for([@coworking_space, @booking]) do |f| %>
   <%= f.input :start_datetime %>
   <%= f.input :end_datetime %>
-  <%= f.association :coworking_space %>
-  <%= f.submit %>
+  <%= f.submit 'Confirm', class: "btn btn-primary" %>
+  </div>
 <% end %>
+<<<<<<< HEAD
 
 <script>
   //const flatpickr = require("flatpickr");
@@ -11,3 +15,7 @@
   flatpickr("#booking_start_datetime", {});
   flatpickr("#booking_end_datetime", {});
 </script>
+=======
+</div>
+</div>
+>>>>>>> master
