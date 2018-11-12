@@ -4,10 +4,12 @@ class CoworkingSpace < ApplicationRecord
 
   include PgSearch
   pg_search_scope :search_by_name,
-    against: [ :name ],
+    against: [ :name, :short_desc, :long_desc, :city, :country, :address, :services ],
     using: {
-      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+      tsearch: { prefix: true }
     }
+
+
   belongs_to :user
   has_many :bookings
 
