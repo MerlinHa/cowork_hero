@@ -118,3 +118,4 @@ district = CoworkingSpace.create!({
 
  outpost_ubud.remote_photo_url = "https://res.cloudinary.com/merlinha/image/upload/v1541770720/m9lp7blcngnnj6gns8vr.jpg"
  outpost_ubud.save
+
