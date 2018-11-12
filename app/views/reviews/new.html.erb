@@ -6,11 +6,13 @@ New review by <%= current_user.name %>
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <%= simple_form_for([@booking @review]) do |f| %>
-      <%= f.input :stars %>
+      <%= simple_form_for(@review, :url => booking_reviews_path, :method => :post) do |f| %>
+      <%= f.input :title, as: :text %>
       <%= f.input :content, as: :text %>
+      <%= f.input :star, as: :integer%>
       <%= f.submit 'Confirm', class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
 </div>
+

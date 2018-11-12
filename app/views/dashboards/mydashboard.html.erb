@@ -1,85 +1,109 @@
 <div class="container">
+
+
   <div class="row text-center">
     <div class="col-md-12">
       <h3>My bookings</h3>
       <% @mybookings.each do |booking| %>
+
       <div class="message">
+
         <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+
         <div class="message-name">
           <h3><%= booking.user.name %></h3>
           <p><%= booking.created_at %></p>
         </div>
+
         <div class="message-body">
           <p><strong>From <%= booking.start_datetime %> to <%= booking.end_datetime %></strong></p>
           <p>
             <%= booking.coworking_space.name %> / <%= booking.coworking_space.address %>
           </p>
         </div>
+
         <div class="message-status">
           <p class="price"><%= booking.calc_total_days_booked %> days</p>
           <p class="status pending"><%= booking.status %></p>
           <p class="price"><%= booking.calc_total_price %> $ </p>
         </div>
+
         <div class="containbutton">
           <%= link_to new_booking_review_path(booking), class:"btn btn-primary" do %>
           <div>Create your review </div>
           <% end %>
         </div>
-        <% end %>
-      </div>
-    </div>
-    <div class="row text-center">
-      <div class="col-md-12">
-        <h3>My spaces bookings</h3>
-        <% @myspaces.each do |space| %>
-        <% space.bookings.each do |booking| %>
-        <div class="message">
-          <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-          <div class="message-name">
-            <h3><%= booking.user.name %></h3>
-            <p>10/07/17</p>
-          </div>
-          <div class="message-body">
-            <p><strong>From <%= booking.start_datetime %> to <%= booking.end_datetime %></strong></p>
-            <p>
-              I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
-            </p>
-          </div>
-          <div class="message-status">
-            <p class="status pending"><%= booking.status %></p>
-            <p class="price">€345</p>
-          </div>
-        </div>
-        <% end %>
-        <% end %>
-      </div>
-    </div>
-    <div class="row text-center">
-      <div class="col-md-12">
-        <h3>My reviews</h3>
-        <% @mybookings.each do |booking| %>
-        <%= booking.reviews.each do |review| %>
-        <div class="message">
-          <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-          <div class="message-name">
-            <h3><%= review.user.name %></h3>
-            <p>10/07/17</p>
-          </div>
-          <div class="message-body">
-            <p><strong>From <%= review.content %></strong></p>
-            <p>
-              Place Holder
-            </p>
-          </div>
-          <div class="message-status">
-            <!--       <p class="status pending"><%= review.stars %></p> -->
 
-          </div>
-        </div>
-        <% end %>
-        <% end %>
       </div>
+
+      <% end %>
     </div>
+  </div>
+
+
+
+  <div class="row text-center">
+    <div class="col-md-12">
+      <h3>My spaces bookings</h3>
+      <% @myspaces.each do |space| %>
+      <% space.bookings.each do |booking| %>
+      <div class="message">
+        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+        <div class="message-name">
+          <h3><%= booking.user.name %></h3>
+          <p>10/07/17</p>
+        </div>
+        <div class="message-body">
+          <p><strong>From <%= booking.start_datetime %> to <%= booking.end_datetime %></strong></p>
+          <p>
+            I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
+          </p>
+        </div>
+        <div class="message-status">
+          <p class="status pending"><%= booking.status %></p>
+          <p class="price">€345</p>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+
+
+  <div class="row text-center">
+    <div class="col-md-12">
+      <h3>My reviews</h3>
+
+      <% @myreviews.each do |review| %>
+      <div class="message">
+        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+
+        <div class="message-name">
+          <h3><%= review.title %> Placeholder</h3>
+          <p>Place holder enddate of the booking</p>
+        </div>
+
+        <div class="message-body">
+          <p><%= review.content %>
+          </p>
+        </div>
+
+        <div class="message-status">
+          <p class="status pending"><%= review.star %></p>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <% (5-(review.star)).times do %>
+          <span class="fa fa-star checked"></span>
+          <% end %>
+          <% (review.star).times do %>
+          <span class="fa fa-star "></span>
+          <% end %>
+        </div>
+      </div>
+       <% end %>
+    </div>
+
+
+
     <div class="text-center">
       <%= link_to "Back Home", root_path, class: "btn btn-primary" %>
     </div>
