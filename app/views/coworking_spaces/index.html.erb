@@ -26,7 +26,6 @@
           <!-- <img class="card-picture" src="http://blog.copass.org/wp-content/uploads/2015/01/finalBLOG-770x402.jpg"> -->
           <div class="card-picture">
             <%= cl_image_tag "#{space.photo}", :width=> 300, :height=>173, :radius=>10, :effect=>"gradient_fade:10", :crop=>"fill" %>
-            <%#= image_tag "#{space.photo(:card)}" %>
           </div>
         </div>
         <% end %>
@@ -41,7 +40,3 @@
   data-markers="<%= @markers.to_json %>"
   ></div>
 </div>
-
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_BROWSER_KEY']}">
-</script>

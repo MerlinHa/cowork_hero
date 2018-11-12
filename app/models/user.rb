@@ -12,5 +12,7 @@ class User < ApplicationRecord
 
   has_many :coworking_spaces, dependent: :destroy
   # validates :name, presence: true
+  mount_uploader :photo, PhotoUploader
+
 
 end
