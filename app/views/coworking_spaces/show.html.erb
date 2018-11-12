@@ -13,9 +13,7 @@
       </div >
 
       <div id="coworking-picture">
-        <div id="link-photos">
-          <%= link_to "other photos",coworking_spaces_path %>
-        </div >
+        <%= cl_image_tag @coworking_space.photo, height: 300, width: 400, crop: :fill %>
       </div>
     </div>
 
