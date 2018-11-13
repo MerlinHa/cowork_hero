@@ -1,54 +1,44 @@
-<h2 class="text-center">Your Booking</h2>
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <div class="card-booking">
-        <div class="card-title">
-         <!-- <a href="https://www.outpost-asia.com/" class="btn-treehouse"> <%= @booking.coworking_space.name %> </a> -->
-         <%= link_to @booking.coworking_space.name, coworking_space_path(@booking.coworking_space) %>
-       </div>
-       <div class="card-content">
-        <div class="card-image">
-          <%#= image_tag "https://picsum.photos/150/150" %>
-          <%= cl_image_tag "#{@booking.coworking_space.photo}", :width=> 250, :height=>150, :crop=>"fill" %>
-        </div>
-
-        <div class="card-text">
-          <p>
-            <strong>Dates reserved :</strong>
-            <%= Date.parse(@booking.start_datetime).strftime("%A, %b %d") %> until <%= Date.parse(@booking.end_datetime).strftime("%A, %b %d") %>
-          </p>
-          <p>
-            <strong>Price for a day:</strong>
-            <%= @booking.coworking_space.price%>
-          </p>
-          <p>
-            <strong>Total Price:</strong>
-            <%= @booking.calc_total_price %>
-          </p>
-          <p>
-            <strong>Services available:</strong>
-            <%= @booking.coworking_space.services %>
-          </p>
-          <p>
-            <strong>Total Days Booked:</strong>
-            <%= @booking.calc_total_days_booked %>
-          </p>
-          <p>
-            <strong>Location:</strong>
-            <%= @booking.coworking_space.address %>
-          </p>
-          <p>
-            <strong>Capacity:</strong>
-            <%= @booking.coworking_space.capacity %>
-          </p>
-        </div>
+  <h2 class="text-center" style="margin-bottom: 20px">Your Booking: <%= @booking.coworking_space.name  %></h2>
+  <div class="row" style="margin-bottom: 20px">
+    <div class="col-md-6">
+      <div>
+        <%= cl_image_tag "#{@booking.coworking_space.photo}",height: 350, width: 550, :crop=>"fill" %>
       </div>
     </div>
-    <div class="text-center">
-  <%= link_to 'My dashboard', mydashboard_path, class: "btn btn-primary btn-bottom" %>
+    <div class="col-md-6">
+      <p>
+        <strong>Dates reserved :</strong>
+        <%= Date.parse(@booking.start_datetime).strftime("%A, %b %d") %> until <%= Date.parse(@booking.end_datetime).strftime("%A, %b %d") %>
+      </p>
+      <p>
+        <strong>Price for a day:</strong>
+        <%= @booking.coworking_space.price%> $
+      </p>
+      <p>
+        <strong>Total Price:</strong>
+        <%= @booking.calc_total_price %> $
+      </p>
+      <p>
+        <strong>Services available:</strong>
+        <%= @booking.coworking_space.services %>
+      </p>
+      <p>
+        <strong>Total Days Booked:</strong>
+        <%= @booking.calc_total_days_booked %> days
+      </p>
+      <p>
+        <strong>Location:</strong>
+        <%= @booking.coworking_space.address %>
+      </p>
+      <p>
+        <strong>Capacity:</strong>
+        <%= @booking.coworking_space.capacity %> seats
+      </p>
+    </div>
   </div>
+  <div class="text-center">
+    <%= link_to 'My dashboard', mydashboard_path, class: "btn btn-primary btn-bottom" %>
   </div>
-</div>
 </div>
 
