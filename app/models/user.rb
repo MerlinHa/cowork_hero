@@ -13,5 +13,7 @@ class User < ApplicationRecord
   # validates :name, presence: true
   mount_uploader :photo, PhotoUploader
 
+  has_many :reviews, through: :bookings
+
 
 end
