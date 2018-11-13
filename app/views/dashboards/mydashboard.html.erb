@@ -182,11 +182,7 @@
             <%= cl_image_tag booking.user.photo, class: "avatar-large" %>
           <% end %>
 
-            <div class="message-name">
-              <h3><%= space.name %> in <%= space.city %></h3>
-              <p><%= booking.end_datetime %></p>
-            </div>
-         <div class="message-body">
+            <div class="message-body">
             <p><strong> Booking: <%= booking.id %> - <%= booking.total_price %> $ - by user <%= review.user.name %>  </strong></p>
 
               <p><%= review.content %> </p>
