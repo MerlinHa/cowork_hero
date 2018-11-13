@@ -11,7 +11,7 @@
             <img class="avatar-large" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg">
             <%#= cl_image_tag("hvolxl8zw04fsqk2v3fb", class: "avatar dropdown-toggle", id:"navbar-wagon-menu", data: {toggle: 'dropdown'}) %>
           <% else %>
-            <%= cl_image_tag current_user.photo, class:"avatar-large" %>
+            <%= cl_image_tag booking.coworking_space.photo, class:"pic-dashboard" %>
           <% end %>
 
 
@@ -52,30 +52,42 @@
 
   <div class="row text-center">
     <div class="col-md-12">
-      <h3>My reviews on my bookings</h3>
+      <h3>Reviews on my bookings</h3>
       <% @myreviews.each do |review| %>
       <div class="message">
-
 
       <% if current_user.photo.filename.nil?  %>
             <img class="avatar-large" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg">
             <%#= cl_image_tag("hvolxl8zw04fsqk2v3fb", class: "avatar dropdown-toggle", id:"navbar-wagon-menu", data: {toggle: 'dropdown'}) %>
           <% else %>
-            <%= cl_image_tag current_user.photo, class:"avatar-large" %>
+            <%= cl_image_tag review.booking.coworking_space.photo, class:"pic-dashboard" %>
           <% end %>
 
 
-        <div class="message-name">
+     <!--    <div class="message-name">
           <h3><%= review.title %> </h3>
           <p><%= review.booking.start_datetime %></p>
-        </div>
+        </div> -->
         <div class="message-body">
           <p><%= review.content %>
           </p>
         </div>
 
         <div class="message-status">
-          <p class="status pending"><%= review.star %></p>
+          <p class="status pending">
+          <div class=“message-status”>
+           <% if review.star == 2 %>
+             <p class=“status pending”>Poor</p>
+             <% elsif review.star == 3 %>
+             <p class=“status pending”>Medium</p>
+             <% elsif review.star == 4 %>
+             <p class=“status pending”>Great</p>
+             <% elsif review.star == 5 %>
+             <p class=“status pending”>Excellent</p>
+             <% else %>
+             <p class=“status pending”>Very poor</p>
+           <% end %>
+         </p>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
           <% review.star.times do %>
           <span class="fa fa-star checked"></span>
@@ -98,8 +110,6 @@
       <% space.bookings.each do |booking| %>
       <div class="message">
 
-
-
        <% if booking.user.photo.filename.nil?  %>
             <img class="avatar-large" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg">
             <%#= cl_image_tag("hvolxl8zw04fsqk2v3fb", class: "avatar dropdown-toggle", id:"navbar-wagon-menu", data: {toggle: 'dropdown'}) %>
@@ -107,15 +117,12 @@
             <%= cl_image_tag booking.user.photo, class: "avatar-large" %>
           <% end %>
 
-
-
-
         <div class="message-name">
-          <h3><%= booking.user.name %> name</h3>
-          <p>booking.end_datetime</p>
+          <h3><%= booking.user.name %></h3>
+          <p><%= booking.start_datetime %></p>
         </div>
         <div class="message-body">
-          <p><strong>From <%= booking.start_datetime %> to <%= booking.end_datetime %></strong></p>
+          <p><strong>From <%= Date.parse(booking.start_datetime).strftime("%A, %b %d") %> to <%= Date.parse(booking.end_datetime).strftime("%A, %b %d") %></strong></p>
           <p>
             Place Holder Comment from client during booking process
           </p>
@@ -129,7 +136,7 @@
             <% if booking.status == nil %>
             <p class="status pending">Pending</p>
             <% elsif booking.status == false %>
-            <p class="status declined">Decline</p>
+            <p class="status declined">Declined</p>
             <% else %>
             <p class="status accepted">Accepted</p>
             <% end %>
@@ -168,16 +175,12 @@
 
           <div class="message">
 
-
-
                <% if booking.user.photo.filename.nil?  %>
             <img class="avatar-large" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg">
             <%#= cl_image_tag("hvolxl8zw04fsqk2v3fb", class: "avatar dropdown-toggle", id:"navbar-wagon-menu", data: {toggle: 'dropdown'}) %>
           <% else %>
             <%= cl_image_tag booking.user.photo, class: "avatar-large" %>
           <% end %>
-
-
 
             <div class="message-name">
               <h3><%= space.name %> in <%= space.city %></h3>
@@ -190,7 +193,21 @@
             </div>
 
             <div class="message-status">
-              <p class="status pending"><%= review.star %></p>
+              <p class="status pending">
+                <div class=“message-status”>
+                 <% if review.star == 2 %>
+                   <p class=“status pending”>Poor</p>
+                   <% elsif review.star == 3 %>
+                   <p class=“status pending”>Medium</p>
+                   <% elsif review.star == 4 %>
+                   <p class=“status pending”>Great</p>
+                   <% elsif review.star == 5 %>
+                   <p class=“status pending”>Excellent</p>
+                   <% else %>
+                   <p class=“status pending”>Very poor</p>
+                 <% end %>
+                </div>
+              </p>
               <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
               <% review.star.times do %>
               <span class="fa fa-star checked"></span>
