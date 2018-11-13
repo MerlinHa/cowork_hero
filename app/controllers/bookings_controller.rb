@@ -50,6 +50,11 @@ class BookingsController < ApplicationController
     @booking.save
     redirect_to mydashboard_path
   end
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+        redirect_to mydashboard_path
+  end
 
   private
 
