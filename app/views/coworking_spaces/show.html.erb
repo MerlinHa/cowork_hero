@@ -1,197 +1,197 @@
-
-
 <div class="container">
-  <div class="row text-center">
-    <!-- <h2><%= @coworking_space.name %></h2> -->
-      <h3>In <%= @coworking_space.city %> : <%= @coworking_space.name %></h3>
-  </div>
-
-  <div id="coworking-picture">
-    <%= cl_image_tag @coworking_space.photo, crop: :fill, height: 600, width: 1200 %>
-  </div>
-  <div class="second-line">
-    <div class="ratings">
-      <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star "></span>
-          <span><h5>Very Good!</h5></span>
+  <div class="col-sm-10 col-sm-offset-1">
+    <div class="row text-center">
+      <!-- <h2><%= @coworking_space.name %></h2> -->
+        <h3>In <%= @coworking_space.city %> : <%= @coworking_space.name %></h3>
     </div>
 
+    <div id="coworking-picture">
+      <%= cl_image_tag @coworking_space.photo, crop: :fill, height: 600, width: 1200 %>
+    </div>
+    <div class="second-line">
+      <div class="ratings">
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star "></span>
+        <span><h5>Very Good!</h5></span>
+      </div>
 
-  <div class="remainingseats">
-    <h5 style="font-weight:bold; color:green; text-align: center;">
-      <%= @coworking_space.capacity-4 %>
+
+    <div class="remainingseats">
+      <h5 style="font-weight:bold; color:green; text-align: center;">
+        <%= @coworking_space.capacity-4 %>
+      </h5>
+      <h5>
+       seats /  <%= @coworking_space.capacity %>
+     </h5>
+   </div>
+
+   <div class="monthlyprice text-center">
+    <h5 style="font-weight:bold; color:green;">
+      <%= @coworking_space.price*20 %>
     </h5>
     <h5>
-     seats /  <%= @coworking_space.capacity %>
+     $ / month
    </h5>
- </div>
-
- <div class="monthlyprice text-center">
-  <h5 style="font-weight:bold; color:green;">
-    <%= @coworking_space.price*20 %>
-  </h5>
-  <h5>
-   $ / month
- </h5>
-</div>
-
-<div class="dailyprice text-center">
-  <h5 style="font-weight:bold; color:green;">
-    <%= @coworking_space.price %>
-  </h5>
-  <h5>
-    $ / daily
-  </h5>
-</div>
-
-<div class="containbutton">
-  <%= link_to new_coworking_space_booking_path(@coworking_space), class:"btn btn-primary" do %>
-  <div>Booking </div>
-  <% end %>
-</div>
-</div>
-
-<br>
-<div class="services">
-  <div style="margin-bottom: 5px">
-    <p>You will enjoy the following services:</p>
   </div>
-  <% @coworking_space.services %>
-  <div class="panel panel--padded--thin" id="service-amenities">
-    <div class="panel__content">
-      <div class="pin-columns">
 
-        <div class="pin">
-          <h5 class="section">  Technology</h5>
-          <ul class="services-amenities">
+  <div class="dailyprice text-center">
+    <h5 style="font-weight:bold; color:green;">
+      <%= @coworking_space.price %>
+    </h5>
+    <h5>
+      $ / daily
+    </h5>
+  </div>
 
+  <div class="containbutton">
+    <%= link_to new_coworking_space_booking_path(@coworking_space), class:"btn btn-primary" do %>
+    <div>Booking </div>
+    <% end %>
+  </div>
+  </div>
 
-            <li>
-              <div>
-                <i class="icon fas fa-check"></i>
-                <span>Wifi </span>
-              </div>
-            </li>
-
-            <li>
-              <div>
-                <i class="icon fas fa-check"></i>
-                <span>Printer </span>
-              </div>
-            </li>
-
-            <li>
-              <div>
-                <i class="icon fas fa-check"></i>
-                <span>Video Projector </span>
-              </div>
-            </li>
-
-          </ul>
-        </div>
-
-        <div class="pin">
-          <h5 class="section">  Transport</h5>
-          <ul class="services-amenities">
-
-            <li>
-              <div>
-                <i class="icon fas fa-check"></i>
-                <span>Private Parking</span>
-              </div>
-            </li>
-
-          </ul>
-        </div>
-
-        <div class="pin">
-          <h5 class="section">  Extra</h5>
-          <ul class="services-amenities">
-
-            <li>
-              <div>
-                <i class="icon fas fa-check"></i>
-                <span>SwimmingPool</span>
-              </div>
-            </li>
-
-            <li>
-              <div>
-                <i class="icon fas fa-check"></i>
-                <span>Gym</span>
-              </div>
-            </li>
-
-            <li>
-              <div>
-                <i class="icon fas fa-check"></i>
-                <span>Restaurant</span>
-              </div>
-            </li>
-
-            <li>
-              <div>
-                <i class="icon fas fa-check"></i>
-                <span>Conferences</span>
-              </div>
-            </li>
-
-          </ul>
-        </div>
-
-      </div>
+  <br>
+  <div class="services">
+    <div style="margin-bottom: 5px">
+      <p>You will enjoy the following services:</p>
     </div>
+    <% @coworking_space.services %>
+    <div class="panel panel--padded--thin" id="service-amenities">
+      <div class="panel__content">
+        <div class="pin-columns">
 
-  </div>
-</div>
-
-<h3>Lastest reviews</h3>
-
+          <div class="pin">
+            <h5 class="section">  Technology</h5>
+            <ul class="services-amenities">
 
 
+              <li>
+                <div>
+                  <i class="icon fas fa-check"></i>
+                  <span>Wifi </span>
+                </div>
+              </li>
 
-<div class="row">
-  <% @coworking_space.reviews.order(created_at: :asc).limit(5).each do |review| %>
-  <div class="col-xs-12">
-    <div class="message">
-      <%= cl_image_tag "#{review.user.photo}", :crop=>"fill", class: "avatar-large" %>
-      <div class="message-name">
-        <h3><%= review.user.name %></h3>
-        <p><%= review.created_at %></p>
+              <li>
+                <div>
+                  <i class="icon fas fa-check"></i>
+                  <span>Printer </span>
+                </div>
+              </li>
+
+              <li>
+                <div>
+                  <i class="icon fas fa-check"></i>
+                  <span>Video Projector </span>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+
+          <div class="pin">
+            <h5 class="section">  Transport</h5>
+            <ul class="services-amenities">
+
+              <li>
+                <div>
+                  <i class="icon fas fa-check"></i>
+                  <span>Private Parking</span>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+
+          <div class="pin">
+            <h5 class="section">  Extra</h5>
+            <ul class="services-amenities">
+
+              <li>
+                <div>
+                  <i class="icon fas fa-check"></i>
+                  <span>SwimmingPool</span>
+                </div>
+              </li>
+
+              <li>
+                <div>
+                  <i class="icon fas fa-check"></i>
+                  <span>Gym</span>
+                </div>
+              </li>
+
+              <li>
+                <div>
+                  <i class="icon fas fa-check"></i>
+                  <span>Restaurant</span>
+                </div>
+              </li>
+
+              <li>
+                <div>
+                  <i class="icon fas fa-check"></i>
+                  <span>Conferences</span>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+
+        </div>
       </div>
-      <div class="message-body">
-        <p><strong><%= review.title %></strong></p>
-        <p>
-          <%= review.content %>
-        </p>
-      </div>
-      <div class="message-status">
-        <% if review.star == 2 %>
-        <p class="status pending">Poor</p>
-        <% elsif review.star == 3 %>
-        <p class="status pending">Medium</p>
-        <% elsif review.star == 4 %>
-        <p class="status pending">Great</p>
-        <% elsif review.star == 5 %>
-        <p class="status pending">Excellent</p>
-        <% else %>
-        <p class="status pending">Zero</p>
-        <% end %>
-        <p class="price">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-          <% review.star.times do %>
-          <span class="fa fa-star checked"></span>
-          <% end %>
-          <% (5-review.star).times do %>
-          <span class="fa fa-star "></span>
-          <% end %>
-        </p>
-      </div>
+
     </div>
   </div>
-  <% end %>
-</div>
+
+  <h3>Lastest reviews</h3>
+
+
+
+
+  <div class="row">
+    <% @coworking_space.reviews.order(created_at: :asc).limit(5).each do |review| %>
+    <div class="col-xs-12">
+      <div class="message">
+        <%= cl_image_tag "#{review.user.photo}", :crop=>"fill", class: "avatar-large" %>
+        <div class="message-name">
+          <h3><%= review.user.name %></h3>
+          <p><%= review.created_at %></p>
+        </div>
+        <div class="message-body">
+          <p><strong><%= review.title %></strong></p>
+          <p>
+            <%= review.content %>
+          </p>
+        </div>
+        <div class="message-status">
+          <% if review.star == 2 %>
+          <p class="status pending">Poor</p>
+          <% elsif review.star == 3 %>
+          <p class="status pending">Medium</p>
+          <% elsif review.star == 4 %>
+          <p class="status pending">Great</p>
+          <% elsif review.star == 5 %>
+          <p class="status pending">Excellent</p>
+          <% else %>
+          <p class="status pending">Zero</p>
+          <% end %>
+          <p class="price">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <% review.star.times do %>
+            <span class="fa fa-star checked"></span>
+            <% end %>
+            <% (5-review.star).times do %>
+            <span class="fa fa-star "></span>
+            <% end %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  </div>
 </div>
