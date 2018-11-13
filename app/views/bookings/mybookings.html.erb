@@ -3,7 +3,9 @@
 <div class="container">
   <div class="row">
     <% @bookings.each do |booking|%>
-    <li>
-      <a href="/coworking_spaces/1/bookings/1"> <%= booking.coworking_space.name %> </a>
-    </li>
-<% end  %>
+      <li>
+        <a href="/coworking_spaces/1/bookings/1"> <%= booking.coworking_space.name %> </a>
+      </li>
+    <% end  %>
+  </div>
+</div>
