@@ -14,42 +14,46 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1517659649778-bae24b8c2e26?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e901063a8cabf1ea1088644a007186f8&auto=format&fit=crop&w=1932&q=80');">
-        <div class="card-category">Popular</div>
-        <div class="card-description">
-          <h2>Barcelona</h2>
-          <p>Very cool city, the best</p>
+      <%= link_to coworking_spaces_path(:query => 'barcelona') do %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1517659649778-bae24b8c2e26?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e901063a8cabf1ea1088644a007186f8&auto=format&fit=crop&w=1932&q=80');">
+          <div class="card-category">Popular</div>
+          <div class="card-description">
+            <h2>Barcelona</h2>
+            <p>Very cool city, the best</p>
+          </div>
+          <a class="card-link" href="#" ></a>
         </div>
-        <a class="card-link" href="#" ></a>
-      </div>
+      <% end %>
     </div>
     <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1531060390976-9381603509be?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f1738d4af4a8fae90104c2c7ea90c9b0&auto=format&fit=crop&w=2689&q=80');">
-        <div class="card-category">Popular</div>
-        <div class="card-description">
-          <h2>Bali</h2>
-          <p>Very cool city, the best</p>
+      <%= link_to coworking_spaces_path(:query => 'bali') do %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1531060390976-9381603509be?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f1738d4af4a8fae90104c2c7ea90c9b0&auto=format&fit=crop&w=2689&q=80');">
+          <div class="card-category">Popular</div>
+          <div class="card-description">
+            <h2>Bali</h2>
+            <p>Very cool city, the best</p>
+          </div>
         </div>
-        <a class="card-link" href="#" ></a>
-      </div>
+      <% end %>
     </div>
     <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e7af86beb07b95aa8319fa882e4724e3&auto=format&fit=crop&w=2252&q=80');">
-        <div class="card-category">Popular</div>
-        <div class="card-description">
-          <h2>Paris</h2>
-          <p>Very cool city, the best</p>
+      <%= link_to coworking_spaces_path(:query => 'paris') do %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e7af86beb07b95aa8319fa882e4724e3&auto=format&fit=crop&w=2252&q=80');">
+          <div class="card-category">Popular</div>
+          <div class="card-description">
+            <h2>Paris</h2>
+            <p>Very cool city, the best</p>
+          </div>
+          <a class="card-link" href="#" ></a>
         </div>
-        <a class="card-link" href="#" ></a>
       </div>
-    </div>
+    <% end %>
   </div>
   <div class="center">
   <p>Cowork-hero makes it easy to find workspaces on the go. Try new coworking spaces or drop by your comfortable favorites. Book depending on your everyday needs
   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quis reiciendis tempore fugit quia quas! Itaque qui vel maiores, molestiae, libero earum alias, incidunt quaerat perferendis tempora beatae aspernatur magni?</p>
   </div>
   <div class="semi_banner">
-      <h3>Co-working space Owners</h3>
-      <a class="btn btn-primary btn-lg">Register</a>
-  </div>
+    <h3>Co-working space Owners</h3>
+    <%= link_to 'Add your coworking space', new_coworking_space_path, class: "btn btn-primary" %>  </div>
 </div>
