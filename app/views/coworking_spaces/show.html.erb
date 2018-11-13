@@ -1,297 +1,194 @@
 
-<h1> Now time to enjoy coworking...</h1>
 
 <div class="container">
-  <div class="coworking-global-view">
+  <div class="row">
+    <h1><%= @coworking_space.name %>
+      <h2>In <%= @coworking_space.city %></h2>
+  </div>
 
-    <div class="first-line">
-      <div id="coworking-summary">
-        <h2>In <%= @coworking_space.city %>, you have selected: </h2>
-        <h1><%= @coworking_space.name %>
-        </h1>
-      </div >
+  <div id="coworking-picture">
+    <%= cl_image_tag @coworking_space.photo, crop: :fill %>
+  </div>
+  <div class="second-line">
+    <div class="ratings">
+      <h5>
+       Very Good!
+     </h5>
 
-      <div id="coworking-picture">
-        <%= cl_image_tag @coworking_space.photo, height: 300, width: 400, crop: :fill %>
+    </div>
+
+
+  <div class="remainingseats">
+    <h5 style="font-weight:bold; color:green;">
+      <%= @coworking_space.capacity-4 %>
+    </h5>
+    <h5>
+     seats /  <%= @coworking_space.capacity %>
+   </h5>
+ </div>
+
+ <div class="monthlyprice text-center">
+  <h5 style="font-weight:bold; color:green;">
+    <%= @coworking_space.price*20 %>
+  </h5>
+  <h5>
+   $ / month
+ </h5>
+</div>
+
+<div class="dailyprice text-center">
+  <h5 style="font-weight:bold; color:green;">
+    <%= @coworking_space.price %>
+  </h5>
+  <h5>
+    $ / daily
+  </h5>
+</div>
+
+<div class="containbutton">
+  <%= link_to new_coworking_space_booking_path(@coworking_space), class:"btn btn-primary" do %>
+  <div>Booking </div>
+  <% end %>
+</div>
+</div>
+
+<br>
+<div class="services">
+  You will enjoy the following services:
+  <br>
+  <% @coworking_space.services %>
+  <div class="panel panel--padded--thin" id="service-amenities">
+    <div class="panel__content">
+      <div class="pin-columns">
+
+        <div class="pin">
+          <h5 class="section">  Technology</h5>
+          <ul class="services-amenities">
+
+
+            <li>
+              <div>
+                <i class="icon fas fa-check"></i>
+                <span>Wifi </span>
+              </div>
+            </li>
+
+            <li>
+              <div>
+                <i class="icon fas fa-check"></i>
+                <span>Printer </span>
+              </div>
+            </li>
+
+            <li>
+              <div>
+                <i class="icon fas fa-check"></i>
+                <span>Video Projector </span>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="pin">
+          <h5 class="section">  Transport</h5>
+          <ul class="services-amenities">
+
+            <li>
+              <div>
+                <i class="icon fas fa-check"></i>
+                <span>Private Parking</span>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="pin">
+          <h5 class="section">  Extra</h5>
+          <ul class="services-amenities">
+
+            <li>
+              <div>
+                <i class="icon fas fa-check"></i>
+                <span>SwimmingPool</span>
+              </div>
+            </li>
+
+            <li>
+              <div>
+                <i class="icon fas fa-check"></i>
+                <span>Gym</span>
+              </div>
+            </li>
+
+            <li>
+              <div>
+                <i class="icon fas fa-check"></i>
+                <span>Restaurant</span>
+              </div>
+            </li>
+
+            <li>
+              <div>
+                <i class="icon fas fa-check"></i>
+                <span>Conferences</span>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
       </div>
     </div>
 
-    <div class="second-line">
+  </div>
+</div>
 
-      <div class="ratings">
-        <h5>
-         Very Good!
-        </h5>
+<br>
+<br>
+
+
+
+
+<div class="row">
+  <% @coworking_space.reviews.order(created_at: :asc).limit(5).each do |review| %>
+  <div class="col-xs-12">
+    <div class="message">
+      <%= cl_image_tag "#{review.user.photo}", :crop=>"fill", class: "avatar-large" %>
+      <div class="message-name">
+        <h3><%= review.user.name %></h3>
+        <p><%= review.created_at %></p>
+      </div>
+      <div class="message-body">
+        <p><strong><%= review.title %></strong></p>
         <p>
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star "></span>
+          <%= review.content %>
         </p>
       </div>
-
-      <div class="remainingseats">
-        <h5 style="font-weight:bold; color:green;">
-          <%= @coworking_space.capacity-4 %>
-        </h5>
-        <h5>
-         seats /  <%= @coworking_space.capacity %>
-        </h5>
-      </div>
-
-      <div class="monthlyprice text-center">
-        <h5 style="font-weight:bold; color:green;">
-          <%= @coworking_space.price*20 %>
-        </h5>
-        <h5>
-         $ / month
-        </h5>
-      </div>
-
-      <div class="dailyprice text-center">
-        <h5 style="font-weight:bold; color:green;">
-          <%= @coworking_space.price %>
-        </h5>
-        <h5>
-          $ / daily
-        </h5>
-      </div>
-
-      <div class="containbutton">
-        <%= link_to new_coworking_space_booking_path(@coworking_space), class:"btn btn-primary" do %>
-        <div>Booking </div>
+      <div class="message-status">
+        <% if review.star == 2 %>
+        <p class="status pending">Poor</p>
+        <% elsif review.star == 3 %>
+        <p class="status pending">Medium</p>
+        <% elsif review.star == 4 %>
+        <p class="status pending">Great</p>
+        <% elsif review.star == 5 %>
+        <p class="status pending">Excellent</p>
+        <% else %>
+        <p class="status pending">Zero</p>
         <% end %>
+        <p class="price">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <% review.star.times do %>
+          <span class="fa fa-star checked"></span>
+          <% end %>
+          <% (5-review.star).times do %>
+          <span class="fa fa-star "></span>
+          <% end %>
+        </p>
       </div>
     </div>
   </div>
-
-  <br>
-  <div class="services">
-    You will enjoy the following services:
-    <br>
-    <% @coworking_space.services %>
-    <div class="panel panel--padded--thin" id="service-amenities">
-      <div class="panel__content">
-        <div class="pin-columns">
-
-          <div class="pin">
-            <h5 class="section">  Technology</h5>
-            <ul class="services-amenities">
-
-
-              <li>
-                <div>
-                  <i class="icon fas fa-check"></i>
-                  <span>Wifi </span>
-                </div>
-              </li>
-
-              <li>
-                <div>
-                  <i class="icon fas fa-check"></i>
-                  <span>Printer </span>
-                </div>
-              </li>
-
-              <li>
-                <div>
-                  <i class="icon fas fa-check"></i>
-                  <span>Video Projector </span>
-                </div>
-              </li>
-
-            </ul>
-          </div>
-
-          <div class="pin">
-            <h5 class="section">  Transport</h5>
-            <ul class="services-amenities">
-
-              <li>
-                <div>
-                  <i class="icon fas fa-check"></i>
-                  <span>Private Parking</span>
-                </div>
-              </li>
-
-            </ul>
-          </div>
-
-          <div class="pin">
-            <h5 class="section">  Extra</h5>
-            <ul class="services-amenities">
-
-              <li>
-                <div>
-                  <i class="icon fas fa-check"></i>
-                  <span>SwimmingPool</span>
-                </div>
-              </li>
-
-              <li>
-                <div>
-                  <i class="icon fas fa-check"></i>
-                  <span>Gym</span>
-                </div>
-              </li>
-
-              <li>
-                <div>
-                  <i class="icon fas fa-check"></i>
-                  <span>Restaurant</span>
-                </div>
-              </li>
-
-              <li>
-                <div>
-                  <i class="icon fas fa-check"></i>
-                  <span>Conferences</span>
-                </div>
-              </li>
-
-            </ul>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <br>
-  <br>
-
-
-
-
-    <div class="row">
-      <div class="col-xs-12">
-
-        <div class="message">
-          <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-          <div class="message-name">
-            <h3>Richard</h3>
-            <p>13/09/18</p>
-          </div>
-          <div class="message-body">
-            <p><strong>Very Good </strong></p>
-            <p>
-              Perfect place to work with good wifi
-            </p>
-          </div>
-          <div class="message-status">
-            <p class="status pending">Very Good!</p>
-            <p class="price">
-              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star "></span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-xs-12">
-
-        <div class="message">
-          <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-          <div class="message-name">
-            <h3>Marcel </h3>
-            <p>22/07/18</p>
-          </div>
-          <div class="message-body">
-            <p><strong>Perfect </strong></p>
-            <p>
-              Very quiet place and good view
-            </p>
-          </div>
-          <div class="message-status">
-            <p class="status pending">Excellent!</p>
-            <p class="price">
-              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="row">
-      <div class="col-xs-12">
-
-        <div class="message">
-          <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-          <div class="message-name">
-            <h3>Gab Dehan</h3>
-            <p>10/07/17</p>
-          </div>
-          <div class="message-body">
-            <p><strong>it's ok </strong></p>
-            <p>
-              Perfect place to work with good wifi
-            </p>
-          </div>
-          <div class="message-status">
-            <p class="status pending">Very Good!</p>
-            <p class="price">
-
-              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-xs-12">
-
-        <div class="message">
-          <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-          <div class="message-name">
-            <h3>Marcel </h3>
-            <p>22/07/18</p>
-          </div>
-          <div class="message-body">
-            <p><strong>Perfect </strong></p>
-            <p>
-              Very quiet place and good view
-            </p>
-          </div>
-          <div class="message-status">
-            <p class="status pending">Excellent!</p>
-            <p class="price">
-              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
+  <% end %>
 </div>
