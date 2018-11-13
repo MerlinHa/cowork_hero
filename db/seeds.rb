@@ -131,7 +131,6 @@ puts CoworkingSpace.count
  outpost_ubud.remote_photo_url = "https://res.cloudinary.com/merlinha/image/upload/v1541770720/m9lp7blcngnnj6gns8vr.jpg"
  outpost_ubud.save
 
-10.times do
 Booking.create!({
 coworking_space: CoworkingSpace.all.sample,
 start_datetime: "01/01/2019",
@@ -140,7 +139,48 @@ total_price:300,
 user: User.all.sample,
 status: false
  })
-end
 
+Booking.create!({
+coworking_space: CoworkingSpace.all.sample,
+start_datetime: "02/02/2019",
+end_datetime: "02/10/2019",
+total_price: 26,
+user: User.all.sample,
+status: false
+ })
 
+Booking.create!({
+coworking_space: CoworkingSpace.all.sample,
+start_datetime: "03/03/2019",
+end_datetime: "03/10/2019",
+total_price: 72,
+user: User.all.sample,
+status: true
+ })
 
+Booking.create!({
+coworking_space: CoworkingSpace.all.sample,
+start_datetime: "04/04/2019",
+end_datetime: "04/10/2019",
+total_price: 120,
+user: User.all.sample,
+status: false
+ })
+
+Booking.create!({
+coworking_space: CoworkingSpace.all.sample,
+start_datetime: "05/05/2019",
+end_datetime: "05/10/2019",
+total_price: 30,
+user: User.all.sample,
+status: fals
+ })
+
+Booking.create!({
+coworking_space: CoworkingSpace.all.sample,
+start_datetime: "06/06/2019",
+end_datetime: "06/10/2019",
+total_price: 66,
+user: User.all.sample,
+status: true
+ })
