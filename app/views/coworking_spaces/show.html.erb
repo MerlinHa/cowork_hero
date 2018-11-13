@@ -1,25 +1,27 @@
 
 
 <div class="container">
-  <div class="row">
-    <h1><%= @coworking_space.name %>
-      <h2>In <%= @coworking_space.city %></h2>
+  <div class="row text-center">
+    <!-- <h2><%= @coworking_space.name %></h2> -->
+      <h3>In <%= @coworking_space.city %> : <%= @coworking_space.name %></h3>
   </div>
 
   <div id="coworking-picture">
-    <%= cl_image_tag @coworking_space.photo, crop: :fill %>
+    <%= cl_image_tag @coworking_space.photo, crop: :fill, height: 600, width: 1200 %>
   </div>
   <div class="second-line">
     <div class="ratings">
-      <h5>
-       Very Good!
-     </h5>
-
+      <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star "></span>
+          <span><h5>Very Good!</h5></span>
     </div>
 
 
   <div class="remainingseats">
-    <h5 style="font-weight:bold; color:green;">
+    <h5 style="font-weight:bold; color:green; text-align: center;">
       <%= @coworking_space.capacity-4 %>
     </h5>
     <h5>
@@ -54,8 +56,9 @@
 
 <br>
 <div class="services">
-  You will enjoy the following services:
-  <br>
+  <div style="margin-bottom: 5px">
+    <p>You will enjoy the following services:</p>
+  </div>
   <% @coworking_space.services %>
   <div class="panel panel--padded--thin" id="service-amenities">
     <div class="panel__content">
@@ -145,8 +148,7 @@
   </div>
 </div>
 
-<br>
-<br>
+<h3>Lastest reviews</h3>
 
 
 
@@ -191,4 +193,5 @@
     </div>
   </div>
   <% end %>
+</div>
 </div>
