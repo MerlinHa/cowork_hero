@@ -157,10 +157,6 @@
     <div class="col-xs-12">
       <div class="message">
         <%= cl_image_tag "#{review.user.photo}", :crop=>"fill", class: "avatar-large" %>
-        <div class="message-name">
-          <h3><%= review.user.name %></h3>
-          <p><%= review.created_at %></p>
-        </div>
         <div class="message-body">
           <p><strong><%= review.title %></strong></p>
           <p>
