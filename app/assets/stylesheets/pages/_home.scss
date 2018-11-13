@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .semi_banner {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/random/900x200');
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1483706571191-85c0c76b1947?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1140&h=275&fit=crop&ixid=eyJhcHBfaWQiOjF9&s=153c83a59f87d6098c9d3752fc636431');
   background-position: cover;
   height: 275px;
   display: flex;
@@ -10,6 +10,7 @@
   color: white;
   border-radius: 10px;
   margin-top: 50px;
+  margin-bottom: 30px;
 }
 
 .center {
