@@ -39,6 +39,7 @@ user_d = User.create!({
   name: "D"
 })
 
+
 dojo = CoworkingSpace.create!({
   name: "Dojo",
   capacity: 50,
@@ -129,4 +130,17 @@ district = CoworkingSpace.create!({
 puts CoworkingSpace.count
  outpost_ubud.remote_photo_url = "https://res.cloudinary.com/merlinha/image/upload/v1541770720/m9lp7blcngnnj6gns8vr.jpg"
  outpost_ubud.save
+
+10.times do
+Booking.create!({
+coworking_space: CoworkingSpace.all.sample,
+start_datetime: "01/01/2019",
+end_datetime: "01/10/2019",
+total_price:300,
+user: User.all.sample,
+status: false
+ })
+end
+
+
 
