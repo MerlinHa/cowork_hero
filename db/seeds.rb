@@ -118,7 +118,7 @@ district = CoworkingSpace.create!({
   price: 25,
   services: "Nice staff",
   user_id: User.all.sample.id,
-  short_desc: "Outpost is a network of coliving, coworking and social spaces for location-independent entrepreneurs, creatives and professionals in Bali.",
+  short_desc: "Outpost is a network of coliving, coworking and social spaces for location-independent entrepreneurs, creatives and professionals in Balir.",
   long_desc: "Outpost is a home base for a fast-growing community of global citizens seeking to design life on their own terms in idyllic destinations. From modern coworking spaces with an active community to comfortable coliving, each Outpost neighborhood has been created to help you feel connected and productive from the moment you arrive. Our mission is to help you join the remote revolution and design your best life.",
   address: "Jl. Raya Nyuh Kuning",
   city: "Ubud",
