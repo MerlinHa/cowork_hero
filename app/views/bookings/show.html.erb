@@ -1,54 +1,52 @@
-<h2>Bookings:</h2>
-Thank you for your reservation, happy coworking:
+<h2 class="text-center">Your Booking</h2>
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <div class="card-booking">
         <div class="card-title">
-         <a href="https://www.outpost-asia.com/" class="btn-treehouse"> <%= @booking.coworking_space.name %> </a>
+         <!-- <a href="https://www.outpost-asia.com/" class="btn-treehouse"> <%= @booking.coworking_space.name %> </a> -->
+         <%= link_to @booking.coworking_space.name, coworking_space_path(@booking.coworking_space) %>
        </div>
        <div class="card-content">
         <div class="card-image">
-          <%= image_tag "https://picsum.photos/150/150" %>
+          <%#= image_tag "https://picsum.photos/150/150" %>
+          <%= cl_image_tag "#{@booking.coworking_space.photo}", :width=> 250, :height=>150, :crop=>"fill" %>
         </div>
 
         <div class="card-text">
-
-          <div class="card-date">
-            <p>
-              Dates reserved :
-              From: < <%= @booking.start_datetime %> <  To: < <%= @booking.end_datetime %> >
-            </p>
-          </div>
           <p>
-            Price for a day:
-            <%= @booking.coworking_space.price %>
+            <strong>Dates reserved :</strong>
+            <%= Date.parse(@booking.start_datetime).strftime("%A, %b %d") %> until <%= Date.parse(@booking.end_datetime).strftime("%A, %b %d") %>
           </p>
           <p>
-            Total Price:
+            <strong>Price for a day:</strong>
+            <%= @booking.coworking_space.price%>
+          </p>
+          <p>
+            <strong>Total Price:</strong>
             <%= @booking.calc_total_price %>
           </p>
           <p>
-            Services available:
+            <strong>Services available:</strong>
             <%= @booking.coworking_space.services %>
           </p>
           <p>
-            Total Days Booked:
+            <strong>Total Days Booked:</strong>
             <%= @booking.calc_total_days_booked %>
           </p>
           <p>
-            Location::
+            <strong>Location:</strong>
             <%= @booking.coworking_space.address %>
           </p>
           <p>
-            Capacity:
+            <strong>Capacity:</strong>
             <%= @booking.coworking_space.capacity %>
           </p>
         </div>
       </div>
     </div>
     <div class="text-center">
-  <%= link_to 'My dashboard', mydashboard_path, class: "btn btn-primary" %>
+  <%= link_to 'My dashboard', mydashboard_path, class: "btn btn-primary btn-bottom" %>
   </div>
   </div>
 </div>
