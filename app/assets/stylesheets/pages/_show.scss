@@ -8,12 +8,15 @@ height: calc(100vh - 270px);
 }
 
 #coworking-picture {
-flex: 0 0 75%;
+// flex: 0 0 75%;
 // background-image: url(https://cdn-images-1.medium.com/max/1600/1*LYhgLWlP3xct4D66ySur5w.png);
 // background-repeat: no-repeat;
-background-size: cover;
-position: relative;
-right: 0px;
+display: flex;
+height: 50vh;
+background-size: cover !important;
+border-radius: 10px;
+// position: relative;
+// right: 0px;
 }
 
 .first-line {
