@@ -12,7 +12,7 @@ CoworkingSpace.destroy_all
 user_a = User.create!({
   email: "a@a.a",
   password: "helloworld",
-  name: "A"
+  name: "Barrack Obama"
 })
 user_a.remote_photo_url = "https://res.cloudinary.com/merlinha/image/upload/v1542014834/Official_portrait_of_Barack_Obama.jpg"
 user_a.save
@@ -20,7 +20,7 @@ user_a.save
 user_b = User.create!({
   email: "b@b.b",
   password: "helloworld",
-  name: "B"
+  name: "Donald Trump"
 })
 user_b.remote_photo_url = "https://res.cloudinary.com/merlinha/image/upload/v1542014835/Download_2.jpg"
 user_b.save
@@ -28,7 +28,7 @@ user_b.save
 user_c = User.create!({
   email: "c@c.c",
   password: "helloworld",
-  name: "C"
+  name: "Chuck Norris"
 })
 user_c.remote_photo_url = "https://res.cloudinary.com/merlinha/image/upload/v1542014835/chuck-norris-15720761-1-402.jpg"
 user_c.save
@@ -36,7 +36,7 @@ user_c.save
 user_d = User.create!({
   email: "d@d.d",
   password: "helloworld",
-  name: "D"
+  name: "Superman"
 })
 
 
@@ -134,7 +134,7 @@ puts CoworkingSpace.count
 Booking.create!({
 coworking_space: CoworkingSpace.all.sample,
 start_datetime: "01/01/2019",
-end_datetime: "01/10/2019",
+end_datetime: "08/01/2019",
 total_price:300,
 user: User.all.sample,
 status: false
@@ -143,7 +143,7 @@ status: false
 Booking.create!({
 coworking_space: CoworkingSpace.all.sample,
 start_datetime: "02/02/2019",
-end_datetime: "02/10/2019",
+end_datetime: "12/02/2019",
 total_price: 26,
 user: User.all.sample,
 status: false
@@ -152,7 +152,7 @@ status: false
 Booking.create!({
 coworking_space: CoworkingSpace.all.sample,
 start_datetime: "03/03/2019",
-end_datetime: "03/10/2019",
+end_datetime: "14/03/2019",
 total_price: 72,
 user: User.all.sample,
 status: true
@@ -161,7 +161,7 @@ status: true
 Booking.create!({
 coworking_space: CoworkingSpace.all.sample,
 start_datetime: "04/04/2019",
-end_datetime: "04/10/2019",
+end_datetime: "08/04/2019",
 total_price: 120,
 user: User.all.sample,
 status: false
@@ -170,17 +170,82 @@ status: false
 Booking.create!({
 coworking_space: CoworkingSpace.all.sample,
 start_datetime: "05/05/2019",
-end_datetime: "05/10/2019",
+end_datetime: "05/06/2019",
 total_price: 30,
 user: User.all.sample,
-status: fals
+status: false
  })
 
 Booking.create!({
 coworking_space: CoworkingSpace.all.sample,
 start_datetime: "06/06/2019",
-end_datetime: "06/10/2019",
+end_datetime: "12/06/2019",
 total_price: 66,
 user: User.all.sample,
 status: true
  })
+
+Booking.create!({
+coworking_space: CoworkingSpace.all.sample,
+start_datetime: "07/07/2019",
+end_datetime: "10/07/2019",
+total_price: 33,
+user: User.all.sample,
+status: false,
+ })
+
+Review.create!({
+  booking: Booking.all.sample,
+  user: User.all.sample,
+  title: "Location, atmosphere, facilities, speed, service, security Everything is over five stars.",
+  content: "The location of Connections at Trafalgar Square is right next to the National Gallery. And it is located in the West End, home of the musical. Connections at Trafalgar Square was perfectly systematic. Club membership includes a desk and meeting room in the hotel's lounge, where all facilities are available and drinks and food are available. In addition to working in the luxurious hotel lounge, the hotel restaurant and bar are available at a reduced cost. Everything was perfect and the most important Internet speed was over 200MB download. Location, atmosphere, facilities, speed, service, security Everything is over five stars.",
+  star: rand(1..5),
+})
+
+Review.create!({
+  booking: Booking.all.sample,
+  user: User.all.sample,
+  title: "Friendly & Professional Staff, Central, and an Excellent Working Space",
+  content: "I’ve been a member of the club for two years now, and would definitely recommend it as a great meeting place! The staff are not only professional, friendly but helpful. The facilities are well maintained and comfortable. In the same building you have Boyds Bar which has a great array of cocktails and Bianco 43 does lovely food and wine!",
+  star: rand(1..5),
+})
+
+Review.create!({
+  booking: Booking.all.sample,
+  user: User.all.sample,
+  title: "The best connection club in Bali",
+  content: "This is an excellent working space...exclusive club. It offers you everything you need to work and have your business meeting. From working spaces to Internet...scan...coffee break always available. You can have meeting room with all facilities you need. They say full service club and they are definitely right. It's private...central...easy to get around. They also offer special discount for hotel and restaurants in the same building. Few steps away from trafalgar square...ready to reach from any part of London.",
+  star: rand(1..5),
+})
+
+Review.create!({
+  booking: Booking.all.sample,
+  user: User.all.sample,
+  title: "Excellent Flexible Workspace in a Relaxed Atmosphere",
+  content: "Great location, excellent facilities (gym, drinks, fruit, snacks, wi-fi, meeting rooms), really helpful and friendly staff and a relaxed atmosphere. There are lots of organised and unorganised social events - often at the on-site bar.",
+  star: rand(1..5),
+})
+
+# Review.create!({
+#   booking_id: Booking.all.sample,
+#   user_id: User.all.sample,
+#   title: "Best place to work!",
+#   content: "Amazing place to work, very comfortable, friendly staff, good amenities",
+#   star: rand(1..5),
+# })
+
+# Review.create!({
+#   booking_id: Booking.all.sample,
+#   user_id: User.all.sample,
+#   title: "One of those visits that makes you remember the experience.",
+#   content: "The central London's location is what gives it the perfect choice.",
+#   star: rand(1..5),
+# })
+
+# Review.create!({
+#   booking_id: Booking.all.sample,
+#   user_id: User.all.sample,
+#   title: "Amazing central location",
+#   content: "Great central location, amazing and very helpful staff, being able to use the hotel gym is a huge bonus, good sense of community.",
+#   star: rand(1..5),
+# })
