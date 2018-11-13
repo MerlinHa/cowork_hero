@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     end
     member do
       patch "/approve", to: 'bookings#approve'
+      patch "/decline", to: 'bookings#decline'
       # "bookings/:id/approve"
     end
     resources :reviews, only: [:new, :create]

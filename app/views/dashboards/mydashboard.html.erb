@@ -122,12 +122,14 @@
         </div>
         <div class="message-body">
         <%= link_to "Approve", approve_booking_path(booking), method: :patch, class: "btn btn-success" %>
-         <%= link_to "Refuse", approve_booking_path(booking), method: :patch, class: "btn btn-danger" %>
+         <%= link_to "Refuse", decline_booking_path(booking), method: :patch, class: "btn btn-danger" %>
           </div>
         <div class="message-status">
             <p class="price"><%= booking.calc_total_days_booked %> days</p>
-            <% if booking.status == false %>
+            <% if booking.status == nil %>
             <p class="status pending">Pending</p>
+            <% elsif booking.status == false %>
+            <p class="status declined">Decline</p>
             <% else %>
             <p class="status accepted">Accepted</p>
             <% end %>
