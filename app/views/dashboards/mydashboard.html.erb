@@ -16,6 +16,11 @@
               <%= booking.coworking_space.name %> / <%= booking.coworking_space.address %>
             </p>
           </div>
+          <div class="message-body">
+        <%= link_to "Update", edit_coworking_space_booking_path(booking.coworking_space, booking), class: "btn btn-primary" %>
+        <%= link_to "Approve", approve_booking_path(booking), method: :patch, class: "btn btn-success" %>
+        <%= link_to "create review", new_booking_review_path(booking), class: "btn btn-warning" %>
+          </div>
           <div class="message-status">
             <p class="price"><%= booking.calc_total_days_booked %> days</p>
             <% if booking.status == false %>
@@ -26,111 +31,150 @@
             <p class="price"><%= booking.calc_total_price %> $ </p>
           </div>
         </div>
-        <%= link_to "Update", edit_coworking_space_booking_path(booking.coworking_space, booking), class: "btn btn-primary" %>
-        <%= link_to "Approve", approve_booking_path(booking), method: :patch, class: "btn btn-primary" %>
-        <%= link_to "create review", new_booking_review_path(booking), class: "btn btn-primary"%>
+
       </div>
       <% end %>
     </div>
   </div>
+
+
+
   <div class="row text-center">
     <div class="col-md-12">
-      <h3>My spaces bookings</h3>
+      <h3>My reviews on my bookings</h3>
+      <% @myreviews.each do |review| %>
+      <div class="message">
+        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+        <div class="message-name">
+          <h3><%= review.title %> </h3>
+          <p><%= review.booking.start_datetime %></p>
+        </div>
+        <div class="message-body">
+          <p><%= review.content %>
+          </p>
+        </div>
+
+        <div class="message-status">
+          <p class="status pending"><%= review.star %></p>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <% review.star.times do %>
+          <span class="fa fa-star checked"></span>
+          <% end %>
+          <% (5-review.star).times do %>
+          <span class="fa fa-star "></span>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+
+
+
+  <div class="row text-center">
+    <div class="col-md-12">
+      <h3>My client bookings</h3>
       <% @myspaces.each do |space| %>
       <% space.bookings.each do |booking| %>
       <div class="message">
         <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
         <div class="message-name">
-          <h3><%= booking.user.name %></h3>
-          <p>10/07/17</p>
+          <h3><%= booking.user.name %> name</h3>
+          <p>booking.end_datetime</p>
         </div>
         <div class="message-body">
           <p><strong>From <%= booking.start_datetime %> to <%= booking.end_datetime %></strong></p>
           <p>
-            I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
+            Place Holder Comment from client during booking process
           </p>
         </div>
+        <div class="message-body">
+        <%= link_to "Approve", approve_booking_path(booking), method: :patch, class: "btn btn-success" %>
+         <%= link_to "Refuse", approve_booking_path(booking), method: :patch, class: "btn btn-danger" %>
+          </div>
         <div class="message-status">
-          <p class="status pending"><%= booking.status %></p>
-          <p class="price">€345</p>
-        </div>
+            <p class="price"><%= booking.calc_total_days_booked %> days</p>
+            <% if booking.status == false %>
+            <p class="status pending">Pending</p>
+            <% else %>
+            <p class="status accepted">Accepted</p>
+            <% end %>
+            <p class="price"><%= booking.calc_total_price %> $ </p>
+          </div>
       </div>
       <% end %>
       <% end %>
     </div>
   </div>
+
+
+
+
+
   <div class="row text-center">
-    <div class="col-md-12">
-      <h3>My reviews</h3>
-      <% @myreviews.each do |review| %>
-      <div class="message">
-        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-        <div class="message-name">
-          <h3><%= review.title %> </h3>
-          <p><%= review.  booking.start_datetime %></p>
-        </div>
-        <div class="message-body">
-          <p><%= review.content %>
-          </p>
-        </div>
-
-        <div class="message-status">
-          <p class="status pending"><%= review.star %></p>
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-          <% review.star.times do %>
-          <span class="fa fa-star checked"></span>
-          <% end %>
-          <% (5-review.star).times do %>
-          <span class="fa fa-star "></span>
-          <% end %>
-        </div>
-      </div>
-      <% end %>
-    </div>
-
-
-<div class="row text-center">
     <div class="col-md-12">
       <h3>My received reviews</h3>
 
-
-
-      <h4>My average rating</h4>
-
-
-
-      <% @myreviews.each do |review| %>
-      <div class="message">
-        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-
-        <div class="message-name">
-          <h3><%= review.title %> </h3>
-          <p><%= review.  booking.start_datetime %></p>
-        </div>
-
-        <div class="message-body">
-          <p><%= review.content %>
-          </p>
-        </div>
-
-        <div class="message-status">
-          <p class="status pending"><%= review.star %></p>
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-          <% review.star.times do %>
+       <% @myspaces.each do |space| %>
+            <h4> For my place <%= space.name %> in <%= space.city %> - average rating: 4,3
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
           <span class="fa fa-star checked"></span>
-          <% end %>
-          <% (5-review.star).times do %>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
           <span class="fa fa-star "></span>
-          <% end %>
-        </div>
-      </div>
-       <% end %>
-    </div>
 
-    <div class="text-center">
-      <%= link_to "Back Home", root_path, class: "btn btn-primary" %>
+            </h4>
+
+        <% space.bookings.each do |booking| %>
+      <!--   <h4> For my booking <%= booking.id %> - <%= booking.total_price %> $ </h4>
+ -->
+               <% booking.reviews.each do |review| %>
+        <!-- <h4> For review <%= review.id %> - by <%= review.user.name %> <%= review.booking.end_datetime %> $ </h4> -->
+
+          <div class="message">
+            <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+
+            <div class="message-name">
+              <h3><%= space.name %> in <%= space.city %></h3>
+              <p><%= booking.end_datetime %></p>
+            </div>
+         <div class="message-body">
+            <p><strong> Booking: <%= booking.id %> - <%= booking.total_price %> $ - by user <%= review.user.name %>  </strong></p>
+
+              <p><%= review.content %> </p>
+            </div>
+
+            <div class="message-status">
+              <p class="status pending"><%= review.star %></p>
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+              <% review.star.times do %>
+              <span class="fa fa-star checked"></span>
+              <% end %>
+              <% (5-review.star).times do %>
+              <span class="fa fa-star "></span>
+              <% end %>
+            </div>
+
+          </div>
+
+       <% end %>
+
+
+     <% end %>
+
+
+      <% end %>
+
+
     </div>
   </div>
+
+
+  <div class="text-center">
+      <%= link_to "Back Home", root_path, class: "btn btn-primary" %>
+  </div>
+
 </div>
 
 
