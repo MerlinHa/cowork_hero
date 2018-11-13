@@ -34,11 +34,20 @@ class CoworkingSpacesController < ApplicationController
     @coworking_space = CoworkingSpace.find(params[:id])
   end
 
+  def edit
+     @coworking_space = CoworkingSpace.find(params[:id])
+  end
+
+  def update
+     @coworking_space = CoworkingSpace.find(params[:id])
+     @coworking_space.update(params_coworking_space)
+     redirect_to coworking_space_path(params[:id])
+  end
+
 
   private
 
   def params_coworking_space
     params.require(:coworking_space).permit(:capacity, :services, :price, :name, :user_id, :latitude, :longitude, :address, :city, :short_desc, :long_desc, :zip, :country, :photo, :photo_id)
-
   end
 end

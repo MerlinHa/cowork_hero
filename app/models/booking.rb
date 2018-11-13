@@ -18,9 +18,6 @@ class Booking < ApplicationRecord
     self.coworking_space.price * (integer_days + 1)
   end
 
-  # def user
-  #   User.find(self.user_id)
-  # end
 end
 
 
