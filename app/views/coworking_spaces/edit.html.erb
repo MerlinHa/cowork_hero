@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="col-sm-6 col-sm-offset-3">
+    <h3>Tell us more about your coworking-space</h3>
+    <%= simple_form_for @coworking_space do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :capacity %>
+      <%= f.input :services %>
+      <%= f.input :price %>
+      <%= f.input :short_desc %>
+      <%= f.input :long_desc %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.submit "Save changes", class: "btn btn-primary form-new" %>
+    <% end %>
+  </div>
+</div>
