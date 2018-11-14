@@ -56,7 +56,7 @@
       <% @myreviews.each do |review| %>
       <div class="message">
 
-      <% if current_user.photo.filename.nil?  %>
+          <% if current_user.photo.filename.nil?  %>
             <img class="avatar-large" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg">
             <%#= cl_image_tag("hvolxl8zw04fsqk2v3fb", class: "avatar dropdown-toggle", id:"navbar-wagon-menu", data: {toggle: 'dropdown'}) %>
           <% else %>
@@ -75,6 +75,7 @@
 
         <div class="message-status">
           <p class="status pending">
+
           <div class=“message-status”>
            <% if review.star == 2 %>
              <p class=“status pending”>Poor</p>
@@ -95,12 +96,14 @@
           <% (5-review.star).times do %>
           <span class="fa fa-star "></span>
           <% end %>
-        </div>
+          </div>
+
+
       </div>
       <% end %>
     </div>
 
-
+</div>
 
 
   <div class="row text-center">
